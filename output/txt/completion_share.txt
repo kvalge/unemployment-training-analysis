@@ -1,0 +1,71 @@
+Participants only: Koolituse tulemus in {katkestas, lõpetas}
+Shares are n_katkestas / (katkestas+lõpetas) and n_lõpetas / (katkestas+lõpetas).
+Month is calendar month of Koolituse algus (January–December), not year-month.
+
+OVERALL
+------------------------------------------------------------------------
+  Participants (katkestas + lõpetas):  3,764
+  lõpetas:                             3,645  (96.8%)
+  katkestas:                           119  (3.2%)
+
+BY COUNTY (Maakond)
+------------------------------------------------------------------------
+group                                           n  lõpetas  katkestas  lõpetas%  katkestas%
+Hiiumaa                                        40       39          1     97.5%        2.5%
+Ida-Virumaa                                   549      527         22     96.0%        4.0%
+Järvamaa                                      124      122          2     98.4%        1.6%
+Jõgevamaa                                      59       56          3     94.9%        5.1%
+Lääne-Virumaa                                 112      106          6     94.6%        5.4%
+Läänemaa                                      135      127          8     94.1%        5.9%
+Pärnumaa                                      295      285         10     96.6%        3.4%
+Põlvamaa                                      108      103          5     95.4%        4.6%
+Raplamaa                                      150      147          3     98.0%        2.0%
+Saaremaa                                      100       95          5     95.0%        5.0%
+Tallinn ja Harjumaa                         1,327    1,296         31     97.7%        2.3%
+Tartumaa                                      429      417         12     97.2%        2.8%
+Valgamaa                                      134      134          0    100.0%        0.0%
+Viljandimaa                                   154      143         11     92.9%        7.1%
+Võrumaa                                        48       48          0    100.0%        0.0%
+
+BY AGE GROUP
+------------------------------------------------------------------------
+group                                           n  lõpetas  katkestas  lõpetas%  katkestas%
+15–24                                         405      386         19     95.3%        4.7%
+25–34                                         871      835         36     95.9%        4.1%
+35–44                                       1,078    1,052         26     97.6%        2.4%
+45–54                                       1,100    1,076         24     97.8%        2.2%
+55+                                           310      296         14     95.5%        4.5%
+
+BY GENDER (Sugu)
+------------------------------------------------------------------------
+group                                           n  lõpetas  katkestas  lõpetas%  katkestas%
+mees                                        1,933    1,883         50     97.4%        2.6%
+naine                                       1,831    1,762         69     96.2%        3.8%
+
+BY SUBJECT (Koolituse ametiala)
+------------------------------------------------------------------------
+group                                           n  lõpetas  katkestas  lõpetas%  katkestas%
+abilised ja koristajad kontoris, hotellis jms asutuses     93       91          2     97.8%        2.2%
+elektrikud ja elektrimehaanikud             1,136    1,107         29     97.4%        2.6%
+finants-ja haldusjuhid                        632      611         21     96.7%        3.3%
+keevitajad ja leeklõikajad                     49       45          4     91.8%        8.2%
+müüjad ja demonstraatorid                     871      844         27     96.9%        3.1%
+pagarid                                       973      937         36     96.3%        3.7%
+raamatupidamine                                10       10          0    100.0%        0.0%
+
+BY CALENDAR MONTH (Koolituse algus)
+------------------------------------------------------------------------
+group                                           n  lõpetas  katkestas  lõpetas%  katkestas%
+January                                       203      200          3     98.5%        1.5%
+February                                      266      263          3     98.9%        1.1%
+March                                         157      153          4     97.5%        2.5%
+April                                           0        0          0        NA          NA
+May                                             1        0          1      0.0%      100.0%
+June                                           23       23          0    100.0%        0.0%
+July                                           43       43          0    100.0%        0.0%
+August                                        367      347         20     94.6%        5.4%
+September                                     568      532         36     93.7%        6.3%
+October                                     1,156    1,117         39     96.6%        3.4%
+November                                      633      622         11     98.3%        1.7%
+December                                      347      345          2     99.4%        0.6%
+

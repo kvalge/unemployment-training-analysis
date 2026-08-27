@@ -2,6 +2,7 @@ __all__ = [
     "run_monthly_training_analysis",
     "monthly_training_counts",
     "run_sent_share_analysis",
+    "run_completion_share_analysis",
 ]
 
 
@@ -17,4 +18,8 @@ def __getattr__(name: str):
         from .sent_share import run_sent_share_analysis
 
         return run_sent_share_analysis
+    if name == "run_completion_share_analysis":
+        from .completion_share import run_completion_share_analysis
+
+        return run_completion_share_analysis
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

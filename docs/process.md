@@ -38,3 +38,6 @@ Completed tasks, newest last.
 
 10. **Share sent vs not sent among unemployed**
     - Added `src/analysis/sent_share.py`: share of unemployed sent to training vs not sent, by county, age group, and gender. Wrote `output/txt/sent_share.txt` and three figures in `output/png/analysis`.
+
+11. **Completion vs dropout among participants**
+    - Added `src/analysis/completion_share.py`: counts and shares of `lõpetas` vs `katkestas` among participants, by county, age group, gender, subject, and calendar month. Wrote `output/txt/completion_share.txt` and five figures in `output/png/analysis`.
