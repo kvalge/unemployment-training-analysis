@@ -1,4 +1,4 @@
-# Exploratory analysis of unemployment and training data
+# Analysis of unemployment and training data
 
 This document records the analysis in the order it was done. Each section states what was computed, what it shows, and where the underlying files live.
 

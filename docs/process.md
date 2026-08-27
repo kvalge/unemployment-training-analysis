@@ -41,3 +41,9 @@ Completed tasks, newest last.
 
 11. **Completion vs dropout among participants**
     - Added `src/analysis/completion_share.py`: counts and shares of `lõpetas` vs `katkestas` among participants, by county, age group, gender, subject, and calendar month. Wrote `output/txt/completion_share.txt` and five figures in `output/png/analysis`.
+
+12. **Project README**
+    - Wrote `README.md` with links to `ANALYSIS.md`, `docs/process.md`, and the `output/txt` and `output/png` folders, plus setup and how to run the scripts.
+
+13. **Pipeline entry point**
+    - Added `main.py` to run download/ensure raw data, load, EDA, and all analysis scripts in order. Added `src/load_data/download.py`.
