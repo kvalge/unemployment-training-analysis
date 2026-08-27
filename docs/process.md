@@ -20,3 +20,6 @@ Completed tasks, newest last.
 4. **Exploratory data analysis (univariate)**
    - Added `src/inspect/eda.py` to profile both tables separately: overview, descriptives, histograms, and boxplots.
    - Wrote `output/txt` and `output/png`, and recorded findings in `ANALYSIS.md` in analysis order.
+
+5. **Value labels on figures**
+   - Added counts, percentages, and five-number summaries onto the EDA PNGs so the numbers are readable on the charts.

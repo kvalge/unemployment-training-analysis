@@ -34,6 +34,80 @@ plt.rcParams.update(
 )
 BAR_COLOR = "#3d5a80"
 HIST_COLOR = "#3d5a80"
+LABEL_BOX = {
+    "boxstyle": "round,pad=0.35",
+    "facecolor": "white",
+    "edgecolor": "#293241",
+    "linewidth": 0.6,
+}
+
+
+def _fmt_count(value: float) -> str:
+    return f"{int(round(value)):,}"
+
+
+def _fmt_stat(value: float) -> str:
+    if abs(value - round(value)) < 1e-6:
+        return f"{int(round(value)):,}"
+    return f"{value:,.1f}"
+
+
+def _stats_box(ax: plt.Axes, lines: list[str], loc: str = "upper right") -> None:
+    ha, va, x, y = {
+        "upper right": ("right", "top", 0.98, 0.98),
+        "upper left": ("left", "top", 0.02, 0.98),
+    }[loc]
+    ax.text(
+        x,
+        y,
+        "\n".join(lines),
+        transform=ax.transAxes,
+        ha=ha,
+        va=va,
+        fontsize=8,
+        linespacing=1.35,
+        bbox=LABEL_BOX,
+        zorder=5,
+    )
+
+
+def _label_hist_bars(ax: plt.Axes, counts: np.ndarray, patches) -> None:
+    labels = [_fmt_count(c) if c >= 1 else "" for c in counts]
+    ax.bar_label(patches, labels=labels, fontsize=6.5, rotation=90, padding=2)
+    ymax = float(np.max(counts)) if len(counts) else 1.0
+    ax.set_ylim(0, ymax * 1.32)
+
+
+def _annotate_numeric_box(ax: plt.Axes, data: np.ndarray) -> None:
+    _stats_box(
+        ax,
+        [
+            f"n = {_fmt_count(len(data))}",
+            f"min = {_fmt_stat(float(np.min(data)))}",
+            f"Q1 = {_fmt_stat(float(np.percentile(data, 25)))}",
+            f"median = {_fmt_stat(float(np.median(data)))}",
+            f"Q3 = {_fmt_stat(float(np.percentile(data, 75)))}",
+            f"max = {_fmt_stat(float(np.max(data)))}",
+        ],
+    )
+
+
+def _annotate_date_box(ax: plt.Axes, data: np.ndarray) -> None:
+    def as_date(num: float) -> str:
+        return mdates.num2date(num).strftime("%Y-%m-%d")
+
+    _stats_box(
+        ax,
+        [
+            f"n = {_fmt_count(len(data))}",
+            f"min = {as_date(float(np.min(data)))}",
+            f"Q1 = {as_date(float(np.percentile(data, 25)))}",
+            f"median = {as_date(float(np.median(data)))}",
+            f"Q3 = {as_date(float(np.percentile(data, 75)))}",
+            f"max = {as_date(float(np.max(data)))}",
+        ],
+        loc="upper left",
+    )
 
 
 def _ensure_dirs() -> None:
@@ -314,9 +388,21 @@ def _save(fig: plt.Figure, filename: str) -> Path:
 
 
 def plot_histogram(series: pd.Series, title: str, xlabel: str, filename: str) -> Path:
-    fig, ax = plt.subplots(figsize=(8, 4.5))
+    fig, ax = plt.subplots(figsize=(9, 5))
     data = series.dropna()
-    ax.hist(data, bins=30, color=HIST_COLOR, edgecolor="white", linewidth=0.4)
+    counts, _bins, patches = ax.hist(
+        data, bins=30, color=HIST_COLOR, edgecolor="white", linewidth=0.4
+    )
+    _label_hist_bars(ax, counts, patches)
+    _stats_box(
+        ax,
+        [
+            f"n = {_fmt_count(len(data))}",
+            f"mean = {_fmt_stat(float(data.mean()))}",
+            f"median = {_fmt_stat(float(data.median()))}",
+        ],
+        loc="upper left",
+    )
     ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.set_ylabel("Count")
@@ -324,7 +410,7 @@ def plot_histogram(series: pd.Series, title: str, xlabel: str, filename: str) ->
 
 
 def plot_boxplot(series: pd.Series, title: str, ylabel: str, filename: str) -> Path:
-    fig, ax = plt.subplots(figsize=(4.5, 5))
+    fig, ax = plt.subplots(figsize=(5.4, 5.2))
     data = series.dropna().to_numpy()
     ax.boxplot(
         data,
@@ -337,15 +423,28 @@ def plot_boxplot(series: pd.Series, title: str, ylabel: str, filename: str) -> P
         capprops={"color": "#293241"},
         flierprops={"marker": "o", "markersize": 3, "alpha": 0.4},
     )
+    _annotate_numeric_box(ax, data)
     ax.set_title(title)
     ax.set_ylabel(ylabel)
     return _save(fig, filename)
 
 
 def plot_date_histogram(series: pd.Series, title: str, filename: str) -> Path:
-    fig, ax = plt.subplots(figsize=(8, 4.5))
+    fig, ax = plt.subplots(figsize=(9, 5))
     data = series.dropna()
-    ax.hist(data, bins=30, color=HIST_COLOR, edgecolor="white", linewidth=0.4)
+    counts, _bins, patches = ax.hist(
+        data, bins=30, color=HIST_COLOR, edgecolor="white", linewidth=0.4
+    )
+    _label_hist_bars(ax, counts, patches)
+    _stats_box(
+        ax,
+        [
+            f"n = {_fmt_count(len(data))}",
+            f"mean = {pd.Timestamp(data.mean()).strftime('%Y-%m-%d')}",
+            f"median = {pd.Timestamp(data.median()).strftime('%Y-%m-%d')}",
+        ],
+        loc="upper left",
+    )
     ax.set_title(title)
     ax.set_xlabel("Date")
     ax.set_ylabel("Count")
@@ -354,7 +453,7 @@ def plot_date_histogram(series: pd.Series, title: str, filename: str) -> Path:
 
 
 def plot_date_boxplot(series: pd.Series, title: str, filename: str) -> Path:
-    fig, ax = plt.subplots(figsize=(4.5, 5))
+    fig, ax = plt.subplots(figsize=(5.6, 5.2))
     data = mdates.date2num(pd.to_datetime(series.dropna()))
     ax.boxplot(
         data,
@@ -367,6 +466,7 @@ def plot_date_boxplot(series: pd.Series, title: str, filename: str) -> Path:
         capprops={"color": "#293241"},
         flierprops={"marker": "o", "markersize": 3, "alpha": 0.4},
     )
+    _annotate_date_box(ax, data)
     ax.yaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
     ax.set_title(title)
     ax.set_ylabel("Date")
@@ -377,18 +477,24 @@ def plot_bar_counts(
     series: pd.Series, title: str, filename: str, horizontal: bool = False
 ) -> Path:
     counts = series.dropna().value_counts()
-    fig_h = max(3.5, 0.35 * len(counts) + 1.5) if horizontal else 4.5
-    fig, ax = plt.subplots(figsize=(8, fig_h))
+    total = int(counts.sum())
+    values = counts.to_numpy()
+    labels = [f"{int(n):,} ({100 * n / total:.1f}%)" for n in values]
+    fig_h = max(3.8, 0.42 * len(counts) + 1.6) if horizontal else 5.0
+    fig, ax = plt.subplots(figsize=(9.2, fig_h))
     if horizontal:
-        ax.barh(
-            [str(i) for i in counts.index[::-1]],
-            counts.to_numpy()[::-1],
-            color=BAR_COLOR,
-        )
+        names = [str(i) for i in counts.index[::-1]]
+        heights = values[::-1]
+        bar_labels = labels[::-1]
+        bars = ax.barh(names, heights, color=BAR_COLOR)
+        ax.bar_label(bars, labels=bar_labels, padding=4, fontsize=8)
+        ax.set_xlim(0, max(heights) * 1.28)
         ax.set_xlabel("Count")
         ax.set_ylabel("")
     else:
-        ax.bar([str(i) for i in counts.index], counts.to_numpy(), color=BAR_COLOR)
+        bars = ax.bar([str(i) for i in counts.index], values, color=BAR_COLOR)
+        ax.bar_label(bars, labels=labels, padding=3, fontsize=8)
+        ax.set_ylim(0, max(values) * 1.18)
         ax.set_ylabel("Count")
         ax.set_xlabel("")
         plt.setp(ax.get_xticklabels(), rotation=25, ha="right")

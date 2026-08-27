@@ -215,4 +215,16 @@ Figure: [trainings_card_counts.png](output/png/trainings_card_counts.png)
 5. **Trainings are short, recent, and usually completed.** Zero-day courses (10%) and the occupation typo `raaamatupidamine` should be kept in mind in later steps.
 6. Sum/mean/IQR were **not applied** to IDs or categoricals; they are reported in [descriptives.txt](output/txt/descriptives.txt) only where they are meaningful.
 
+---
+
+## 6. Value labels on figures
+
+**What was done.** All PNGs in [output/png](output/png) were regenerated with numbers on the chart:
+
+- Bar charts show **count and share** on each bar (for example `1,763 (35.3%)`).
+- Histograms show **bin counts** on the bars, plus n / mean / median in a corner box.
+- Boxplots show **n, min, Q1, median, Q3, max** in a corner box (dates as `YYYY-MM-DD`).
+
+**Conclusion.** The pictures in the sections above can be read without going back to the text files for the main frequencies and quartiles. The underlying numbers are unchanged.
+
 All figures: [output/png](output/png). All text summaries: [output/txt](output/txt).
