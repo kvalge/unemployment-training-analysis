@@ -47,3 +47,6 @@ Completed tasks, newest last.
 
 13. **Pipeline entry point**
     - Added `main.py` to run download/ensure raw data, load, EDA, and all analysis scripts in order. Added `src/load_data/download.py`.
+
+14. **Task prompt catalog**
+    - Added `docs/commands.md` with the prompt text for each completed task from `docs/process.md`, and linked it from `README.md`.

@@ -4,12 +4,11 @@ Quick links:
 
 - [Analysis write-up](ANALYSIS.md)
 - [Process log](docs/process.md)
+- [Task prompts](docs/commands.md)
 - Text outputs: [output/txt](output/txt)
 - Figures: [output/png/eda](output/png/eda) (exploratory) · [output/png/analysis](output/png/analysis) (analysis)
 
 ---
-
-Analysis of Estonian unemployment register extracts: people registered as unemployed (`töötud.xls`) and labour-market trainings (`koolitused.xls`). The two tables share `ID`.
 
 ## Data
 
@@ -17,8 +16,7 @@ Analysis of Estonian unemployment register extracts: people registered as unempl
 | --- | --- | --- |
 | `data/raw/töötud.xls` | Unemployed persons | ID, sex, age, county, unemployment start/end |
 | `data/raw/koolitused.xls` | Trainings | ID, training start/end, occupation, result, training card |
-
-Place the raw Excel files in `data/raw` if they are not already there.
+Every ID of `koolitused.xls` referes to unemployed person of `töötud.xls`.
 
 ## Setup
 
@@ -28,23 +26,11 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-From the project root (so `src` imports resolve):
-
 ```text
 python main.py
 ```
 
 That runs the full pipeline: ensure/download raw Excel files, load both tables, exploratory analysis, then all analysis scripts. Outputs go to `output/txt` and `output/png`.
-
-To run a single step:
-
-```text
-python -c "from src.load_data import load_raw_data; u, t = load_raw_data(); print(u.shape, t.shape)"
-python -c "from src.inspect.eda import run_eda; run_eda()"
-python -c "from src.analysis.monthly_training import run_monthly_training_analysis; run_monthly_training_analysis()"
-python -c "from src.analysis.sent_share import run_sent_share_analysis; run_sent_share_analysis()"
-python -c "from src.analysis.completion_share import run_completion_share_analysis; run_completion_share_analysis()"
-```
 
 ## Project layout
 
@@ -59,6 +45,7 @@ output/png/eda/         exploratory charts
 output/png/analysis/    analysis charts
 ANALYSIS.md             findings in analysis order
 docs/process.md         log of completed tasks
+docs/commands.md        prompt text for each completed task
 ```
 
 Chart colours: main `#4ba7a2`, secondary `#9cd8da`. Training duration is inclusive (`end − start + 1` days).
