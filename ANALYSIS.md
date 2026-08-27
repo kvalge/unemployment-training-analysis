@@ -250,4 +250,34 @@ Updated summaries: [output/txt/descriptives.txt](output/txt/descriptives.txt), [
 
 **Conclusion.** Adding one day to every training shifts location statistics by 1 and leaves spread (std, IQR) the same. The average training duration is **37.3 days**. Same-day start and end is a 1-day course, not a zero-length one.
 
-All figures: [output/png/eda](output/png/eda). All text summaries: [output/txt](output/txt).
+---
+
+## 8. Monthly starts: sent to training vs participated
+
+**What was done.** From `koolitused.xls`, each person (`ID`) was assigned to the **month of `Koolituse algus`**. For every month:
+
+- **Sent to training** — count of all IDs that started that month.
+- **Participated** — count of IDs whose `Koolituse tulemus` is `lõpetas` or `katkestas` only (`loobus`, `jäi ära`, and `keeldus` are sent but not counted as participated).
+
+Code: `src/analysis/monthly_training.py`. Table: [output/txt/monthly_training.txt](output/txt/monthly_training.txt). Figure: [output/png/analysis/monthly_sent_vs_participated.png](output/png/analysis/monthly_sent_vs_participated.png).
+
+![People sent to training vs people who participated, by start month](output/png/analysis/monthly_sent_vs_participated.png)
+
+| Month | Sent | Participated | Did not participate | Rate |
+| --- | ---: | ---: | ---: | ---: |
+| 2024-05 | 1 | 1 | 0 | 100.0% |
+| 2024-06 | 23 | 23 | 0 | 100.0% |
+| 2024-07 | 43 | 43 | 0 | 100.0% |
+| 2024-08 | 371 | 367 | 4 | 98.9% |
+| 2024-09 | 585 | 568 | 17 | 97.1% |
+| 2024-10 | 1,213 | 1,156 | 57 | 95.3% |
+| 2024-11 | 679 | 633 | 46 | 93.2% |
+| 2024-12 | 362 | 347 | 15 | 95.9% |
+| 2025-01 | 210 | 203 | 7 | 96.7% |
+| 2025-02 | 279 | 266 | 13 | 95.3% |
+| 2025-03 | 163 | 157 | 6 | 96.3% |
+| **Total** | **3,929** | **3,764** | **165** | **95.8%** |
+
+**Conclusion.** Starts run from May 2024 to March 2025, with a clear peak in **October 2024** (1,213 sent). Almost everyone who is sent also participates: **95.8%** overall (`lõpetas` or `katkestas`). The gap is small in every month (never more than 57 people) and is zero in the first three months, when volumes were tiny. Non-participation (`loobus`, `jäi ära`, `keeldus`) is 165 people (4.2%) and does not change the monthly shape: the sent and participated series move together.
+
+All figures: [output/png/analysis](output/png/analysis). Table: [output/txt/monthly_training.txt](output/txt/monthly_training.txt).

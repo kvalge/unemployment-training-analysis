@@ -29,3 +29,6 @@ Completed tasks, newest last.
 
 7. **Inclusive training duration**
    - Training length is now end minus start plus one day, so a same-day course counts as 1 day. Regenerated descriptives, overview, duration plots, and `ANALYSIS.md`.
+
+8. **Monthly sent vs participated**
+   - Added `src/analysis/monthly_training.py`: by start month, count all IDs sent to training vs IDs who participated (`lõpetas` or `katkestas`). Wrote `output/txt/monthly_training.txt` and `output/png/analysis/monthly_sent_vs_participated.png`.
