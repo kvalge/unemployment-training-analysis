@@ -1,0 +1,14 @@
+---
+description: After each analysis step, append findings to ANALYSIS.md in logical order
+alwaysApply: true
+---
+
+# Analysis write-up
+
+After each completed analysis step, update `ANALYSIS.md` at the project root.
+
+- Keep the document in the order a good analysis would be read: data, quality, univariate, then later steps as they are done.
+- Add new sections after existing ones. Do not reorder or delete earlier findings.
+- For each step: what was done, conclusions, and links to the `output/txt` and `output/png` files used.
+- Embed a few of the most relevant PNGs with markdown images. Link the rest.
+- Write conclusions from the actual numbers in the outputs, not from memory.

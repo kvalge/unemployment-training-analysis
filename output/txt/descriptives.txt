@@ -1,0 +1,219 @@
+Exploratory data analysis — descriptive statistics
+count, sum, avg, mean, median, std, iqr (where applicable)
+Tables analysed separately. Derived durations are listed after original columns.
+
+========================================================================
+TABLE: unemployed (töötud.xls)
+========================================================================
+
+Variable: ID  [identifier]
+------------------------------------------------------------------------
+  count:     4,996
+  unique:    4,996
+  min:       1
+  max:       5,000
+  sum/avg/mean/median/std/iqr: not meaningful for an identifier
+  missing:   0
+
+Variable: Sugu  [categorical]
+------------------------------------------------------------------------
+  count:     4,996
+  unique:    2
+  mode:      mees (n=2,593)
+  sum:       not applicable (categorical)
+  avg/mean:  not applicable (categorical)
+  median:    not applicable (categorical)
+  std:       not applicable (categorical)
+  iqr:       not applicable (categorical)
+  missing:   0
+  value counts:
+    mees                                                2,593  ( 51.9%)
+    naine                                               2,403  ( 48.1%)
+
+Variable: Vanus  [numeric]
+------------------------------------------------------------------------
+  count:     4,996
+  sum:       198,577.00
+  avg:       39.7472
+  mean:      39.7472
+  median:    40.0000
+  std:       10.8823
+  iqr:       18.0000
+  min:       15
+  max:       61
+  missing:   0
+
+Variable: Maakond  [categorical]
+------------------------------------------------------------------------
+  count:     4,996
+  unique:    15
+  mode:      Tallinn ja Harjumaa (n=1,763)
+  sum:       not applicable (categorical)
+  avg/mean:  not applicable (categorical)
+  median:    not applicable (categorical)
+  std:       not applicable (categorical)
+  iqr:       not applicable (categorical)
+  missing:   0
+  value counts:
+    Tallinn ja Harjumaa                                 1,763  ( 35.3%)
+    Ida-Virumaa                                           778  ( 15.6%)
+    Tartumaa                                              564  ( 11.3%)
+    Pärnumaa                                              417  (  8.3%)
+    Raplamaa                                              192  (  3.8%)
+    Viljandimaa                                           191  (  3.8%)
+    Läänemaa                                              182  (  3.6%)
+    Valgamaa                                              155  (  3.1%)
+    Järvamaa                                              152  (  3.0%)
+    Lääne-Virumaa                                         141  (  2.8%)
+    Põlvamaa                                              135  (  2.7%)
+    Saaremaa                                              124  (  2.5%)
+    Jõgevamaa                                              73  (  1.5%)
+    Hiiumaa                                                66  (  1.3%)
+    Võrumaa                                                63  (  1.3%)
+
+Variable: Töötuse algus  [datetime]
+------------------------------------------------------------------------
+  count:     4,996
+  sum:       not applicable (dates)
+  avg:       2023-09-16
+  mean:      2023-09-16
+  median:    2024-04-19
+  std:       457.21 days
+  iqr:       935.00 days
+  min:       2017-10-17
+  max:       2025-03-05
+  missing:   0
+
+Variable: Töötuse lõpp  [datetime]
+------------------------------------------------------------------------
+  count:     2,049
+  sum:       not applicable (dates)
+  avg:       2025-01-15
+  mean:      2025-01-15
+  median:    2025-01-24
+  std:       43.8584 days
+  iqr:       68.0000 days
+  min:       2024-07-04
+  max:       2025-03-26
+  missing:   2,947
+
+Variable: Töötuse kestus (päeva)  [numeric]
+------------------------------------------------------------------------
+  count:     2,049
+  sum:       981,512.00
+  avg:       479.02
+  mean:      479.02
+  median:    286.00
+  std:       426.44
+  iqr:       824.00
+  min:       22.0000
+  max:       2,385.00
+  missing:   2,947
+
+  note: duration is missing when Töötuse lõpp is missing (still unemployed).
+
+========================================================================
+TABLE: trainings (koolitused.xls)
+========================================================================
+
+Variable: ID  [identifier]
+------------------------------------------------------------------------
+  count:     3,930
+  unique:    3,930
+  min:       1
+  max:       5,000
+  sum/avg/mean/median/std/iqr: not meaningful for an identifier
+  missing:   0
+
+Variable: Koolituse algus  [datetime]
+------------------------------------------------------------------------
+  count:     3,930
+  sum:       not applicable (dates)
+  avg:       2024-11-02
+  mean:      2024-11-02
+  median:    2024-10-23
+  std:       56.0909 days
+  iqr:       63.0000 days
+  min:       2024-05-13
+  max:       2025-03-24
+  missing:   0
+
+Variable: Koolituse lõpp  [datetime]
+------------------------------------------------------------------------
+  count:     3,930
+  sum:       not applicable (dates)
+  avg:       2024-12-09
+  mean:      2024-12-09
+  median:    2024-11-27
+  std:       46.6745 days
+  iqr:       72.0000 days
+  min:       2024-08-26
+  max:       2025-09-13
+  missing:   0
+
+Variable: Koolituse ametiala  [categorical]
+------------------------------------------------------------------------
+  count:     3,930
+  unique:    7
+  mode:      elektrikud ja elektrimehaanikud (n=1,183)
+  sum:       not applicable (categorical)
+  avg/mean:  not applicable (categorical)
+  median:    not applicable (categorical)
+  std:       not applicable (categorical)
+  iqr:       not applicable (categorical)
+  missing:   0
+  value counts:
+    elektrikud ja elektrimehaanikud                     1,183  ( 30.1%)
+    pagarid                                             1,027  ( 26.1%)
+    müüjad ja demonstraatorid                             903  ( 23.0%)
+    finants-ja haldusjuhid                                657  ( 16.7%)
+    abilised ja koristajad kontoris, hotellis jms asutuses     97  (  2.5%)
+    keevitajad ja leeklõikajad                             51  (  1.3%)
+    raaamatupidamine                                       12  (  0.3%)
+
+Variable: Koolituse tulemus  [categorical]
+------------------------------------------------------------------------
+  count:     3,930
+  unique:    5
+  mode:      lõpetas (n=3,646)
+  sum:       not applicable (categorical)
+  avg/mean:  not applicable (categorical)
+  median:    not applicable (categorical)
+  std:       not applicable (categorical)
+  iqr:       not applicable (categorical)
+  missing:   0
+  value counts:
+    lõpetas                                             3,646  ( 92.8%)
+    loobus                                                129  (  3.3%)
+    katkestas                                             119  (  3.0%)
+    jäi ära                                                26  (  0.7%)
+    keeldus                                                10  (  0.3%)
+
+Variable: Koolituskaart  [categorical]
+------------------------------------------------------------------------
+  count:     3,930
+  unique:    2
+  mode:      ei (n=2,546)
+  sum:       not applicable (categorical)
+  avg/mean:  not applicable (categorical)
+  median:    not applicable (categorical)
+  std:       not applicable (categorical)
+  iqr:       not applicable (categorical)
+  missing:   0
+  value counts:
+    ei                                                  2,546  ( 64.8%)
+    jah                                                 1,384  ( 35.2%)
+
+Variable: Koolituse kestus (päeva)  [numeric]
+------------------------------------------------------------------------
+  count:     3,930
+  sum:       142,662.00
+  avg:       36.3008
+  mean:      36.3008
+  median:    23.0000
+  std:       38.2446
+  iqr:       59.0000
+  min:       0
+  max:       397
+  missing:   0
+

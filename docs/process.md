@@ -16,3 +16,7 @@ Completed tasks, newest last.
 3. **Commit messages in chat**
    - After every completed task, write a copy-pasteable commit message in the chat reply.
    - Added a project rule for this. Do not create a git commit unless asked.
+
+4. **Exploratory data analysis (univariate)**
+   - Added `src/inspect/eda.py` to profile both tables separately: overview, descriptives, histograms, and boxplots.
+   - Wrote `output/txt` and `output/png`, and recorded findings in `ANALYSIS.md` in analysis order.

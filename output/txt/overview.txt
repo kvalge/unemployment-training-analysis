@@ -1,0 +1,93 @@
+Exploratory data analysis — overview
+Shape, column types, missing values, and duplications
+Tables analysed separately. Source: src.load_data.load_raw_data()
+
+========================================================================
+TABLE: unemployed (töötud.xls)
+========================================================================
+Shape: 4,996 rows × 6 columns
+
+Column types
+------------------------------------------------------------------------
+  ID                               int64
+  Sugu                             str
+  Vanus                            int64
+  Maakond                          str
+  Töötuse algus                    datetime64[us]
+  Töötuse lõpp                     datetime64[us]
+
+Missing values
+------------------------------------------------------------------------
+  ID                                    0  (  0.0%)
+  Sugu                                  0  (  0.0%)
+  Vanus                                 0  (  0.0%)
+  Maakond                               0  (  0.0%)
+  Töötuse algus                         0  (  0.0%)
+  Töötuse lõpp                      2,947  ( 59.0%)
+  TOTAL CELLS                       2,947
+
+Duplications
+------------------------------------------------------------------------
+  Duplicate rows:              0
+  Duplicate ID values:         0
+  Unique IDs:                  4,996
+  ID unique:                   True
+
+Non-null count by column
+------------------------------------------------------------------------
+  ID                               4,996
+  Sugu                             4,996
+  Vanus                            4,996
+  Maakond                          4,996
+  Töötuse algus                    4,996
+  Töötuse lõpp                     2,049
+
+Date order checks (end >= start, among non-null pairs)
+------------------------------------------------------------------------
+  Unemployment spells with end before start: 0 (of 2,049 completed spells)
+
+========================================================================
+TABLE: trainings (koolitused.xls)
+========================================================================
+Shape: 3,930 rows × 6 columns
+
+Column types
+------------------------------------------------------------------------
+  ID                               int64
+  Koolituse algus                  datetime64[us]
+  Koolituse lõpp                   datetime64[us]
+  Koolituse ametiala               str
+  Koolituse tulemus                str
+  Koolituskaart                    str
+
+Missing values
+------------------------------------------------------------------------
+  ID                                    0  (  0.0%)
+  Koolituse algus                       0  (  0.0%)
+  Koolituse lõpp                        0  (  0.0%)
+  Koolituse ametiala                    0  (  0.0%)
+  Koolituse tulemus                     0  (  0.0%)
+  Koolituskaart                         0  (  0.0%)
+  TOTAL CELLS                           0
+
+Duplications
+------------------------------------------------------------------------
+  Duplicate rows:              0
+  Duplicate ID values:         0
+  Unique IDs:                  3,930
+  ID unique:                   True
+
+Non-null count by column
+------------------------------------------------------------------------
+  ID                               3,930
+  Koolituse algus                  3,930
+  Koolituse lõpp                   3,930
+  Koolituse ametiala               3,930
+  Koolituse tulemus                3,930
+  Koolituskaart                    3,930
+
+Date order checks (end >= start, among non-null pairs)
+------------------------------------------------------------------------
+  Trainings with end before start: 0 (of 3,930)
+  Trainings with end equal to start (0-day): 393 (10.0%)
+
