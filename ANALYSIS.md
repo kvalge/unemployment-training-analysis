@@ -182,11 +182,11 @@ Seven occupations. Four dominate:
 | finants-ja haldusjuhid | 657 | 16.7% |
 | abilised ja koristajad … | 97 | 2.5% |
 | keevitajad ja leeklõikajad | 51 | 1.3% |
-| raaamatupidamine | 12 | 0.3% |
+| raamatupidamine | 12 | 0.3% |
 
 ![Trainings by occupation](output/png/eda/trainings_occupation_counts.png)
 
-**Conclusion.** Electricians, bakers, and sales roles are the main programmes. Accounting (`raaamatupidamine`, 12 rows) is too small for stable subgroup estimates. The triple-a in `raaamatupidamine` and the missing space in `finants-ja haldusjuhid` look like source typos, not extra categories.
+**Conclusion.** Electricians, bakers, and sales roles are the main programmes. Accounting (`raamatupidamine`, 12 rows) is too small for stable subgroup estimates.
 
 ### 4.4 Result (`Koolituse tulemus`)
 
@@ -212,8 +212,7 @@ Figure: [trainings_card_counts.png](output/png/eda/trainings_card_counts.png)
 2. **Unemployment end date is the only missing field** and it means the spell is still open (59%). Duration for completed spells is biased if used as “typical unemployment length”.
 3. **Completed unemployment duration is bimodal** and end dates are bunched in late 2024–early 2025. Treat duration as a snapshot of closed spells, not a full survival picture.
 4. **Age is well-behaved** (15–61, median 40, no boxplot outliers). Sex is balanced. County is dominated by Tallinn ja Harjumaa.
-5. **Trainings are short, recent, and usually completed.** Same-day courses (10%) count as 1 day. The occupation typo `raaamatupidamine` should be kept in mind in later steps.
-6. Sum/mean/IQR were **not applied** to IDs or categoricals; they are reported in [descriptives.txt](output/txt/descriptives.txt) only where they are meaningful.
+5. **Trainings are short, recent, and usually completed.** Same-day courses (10%) count as 1 day.
 
 ---
 
@@ -235,20 +234,7 @@ Figure: [trainings_card_counts.png](output/png/eda/trainings_card_counts.png)
 
 `(Koolituse lõpp − Koolituse algus).days + 1`
 
-Unemployment duration is unchanged (`end − start` for completed spells only).
-
-Updated summaries: [output/txt/descriptives.txt](output/txt/descriptives.txt), [output/txt/overview.txt](output/txt/overview.txt). Duration figures in [output/png/eda](output/png/eda) were regenerated.
-
-| Statistic | Exclusive (old) | Inclusive (current) |
-| --- | --- | --- |
-| Mean / average | 36.3 days | **37.3 days** |
-| Median | 23 | **24** |
-| Std | 38.2 | 38.2 |
-| IQR | 59 | 59 |
-| Min–max | 0–397 | **1–398** |
-| Same-day courses (n=393, 10%) | 0 days | **1 day** |
-
-**Conclusion.** Adding one day to every training shifts location statistics by 1 and leaves spread (std, IQR) the same. The average training duration is **37.3 days**. Same-day start and end is a 1-day course, not a zero-length one.
+Summaries: [output/txt/descriptives.txt](output/txt/descriptives.txt), [output/txt/overview.txt](output/txt/overview.txt). Duration figures [output/png/eda](output/png/eda).
 
 ---
 

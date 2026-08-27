@@ -105,11 +105,3 @@ Write usual relevant info to README.md. To the top of the file add also links to
 ```text
 Create to project root main.py that runs all process from downloading to analysis.
 ```
-
----
-
-## 14. Task prompt catalog
-
-```text
-Based on docs/process.md, create docs\commands.md content, task by task, what should be the prompt text of the task to get the task done. Add a link to this also to README.md.
-```
