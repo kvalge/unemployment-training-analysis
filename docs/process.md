@@ -26,3 +26,6 @@ Completed tasks, newest last.
 
 6. **Separate EDA figure folder**
    - Moved exploratory PNGs to `output/png/eda` so later figures can live in other folders under `output/png`.
+
+7. **Inclusive training duration**
+   - Training length is now end minus start plus one day, so a same-day course counts as 1 day. Regenerated descriptives, overview, duration plots, and `ANALYSIS.md`.

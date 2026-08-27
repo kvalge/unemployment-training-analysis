@@ -42,7 +42,7 @@ Full text: [output/txt/overview.txt](output/txt/overview.txt)
 | End before start | 0 |
 | End equal to start | **393 (10.0%)** |
 
-**Conclusion.** The training table is complete and one row per training ID. One in ten courses has a recorded length of zero days, which is a real pattern in the dates, not missing data. Training IDs also sit in 1–5,000 and are fewer than unemployed persons, so not every unemployed person has a training row.
+**Conclusion.** The training table is complete and one row per training ID. One in ten courses starts and ends on the same calendar day; those are counted as **1 day**, not 0. Training IDs also sit in 1–5,000 and are fewer than unemployed persons, so not every unemployed person has a training row.
 
 ---
 
@@ -149,16 +149,16 @@ Boxplot: [unemployed_duration_box.png](output/png/eda/unemployed_duration_box.pn
 
 Starts run **2024-05-13** to **2025-03-24** (mean 2024-11-02, std 56 days). Ends run **2024-08-26** to **2025-09-13** (mean 2024-12-09). Training is a much tighter calendar window than unemployment.
 
-Derived duration:
+Derived duration is inclusive of both dates: `(Koolituse lõpp − Koolituse algus).days + 1`. A course that starts and ends on the same day is 1 day.
 
 | Statistic | Value |
 | --- | --- |
 | Count | 3,930 (no missing) |
-| Mean | 36.3 days |
-| Median | 23 days |
+| Mean | 37.3 days |
+| Median | 24 days |
 | Std | 38.2 |
 | IQR | 59 |
-| Min–max | 0–397 days |
+| Min–max | 1–398 days |
 
 ![Training duration (histogram)](output/png/eda/trainings_duration_hist.png)
 
@@ -168,7 +168,7 @@ Other figures:
 - [trainings_start_hist.png](output/png/eda/trainings_start_hist.png)
 - [trainings_start_box.png](output/png/eda/trainings_start_box.png)
 
-**Conclusion.** Most courses are short: the histogram piles up near 0–15 days, then a smaller group around one to four months, and a long tail to 397 days. **10% last zero days** (start = end). Median 23 vs mean 36 confirms right skew. Unlike unemployment, every training has both dates, so duration is not censored here.
+**Conclusion.** Most courses are short: the histogram piles up near 1–15 days, then a smaller group around one to four months, and a long tail to 398 days. **10% last 1 day** (start = end). Median 24 vs mean 37.3 confirms right skew. Unlike unemployment, every training has both dates, so duration is not censored here.
 
 ### 4.3 Occupation (`Koolituse ametiala`)
 
@@ -212,7 +212,7 @@ Figure: [trainings_card_counts.png](output/png/eda/trainings_card_counts.png)
 2. **Unemployment end date is the only missing field** and it means the spell is still open (59%). Duration for completed spells is biased if used as “typical unemployment length”.
 3. **Completed unemployment duration is bimodal** and end dates are bunched in late 2024–early 2025. Treat duration as a snapshot of closed spells, not a full survival picture.
 4. **Age is well-behaved** (15–61, median 40, no boxplot outliers). Sex is balanced. County is dominated by Tallinn ja Harjumaa.
-5. **Trainings are short, recent, and usually completed.** Zero-day courses (10%) and the occupation typo `raaamatupidamine` should be kept in mind in later steps.
+5. **Trainings are short, recent, and usually completed.** Same-day courses (10%) count as 1 day. The occupation typo `raaamatupidamine` should be kept in mind in later steps.
 6. Sum/mean/IQR were **not applied** to IDs or categoricals; they are reported in [descriptives.txt](output/txt/descriptives.txt) only where they are meaningful.
 
 ---
@@ -226,5 +226,28 @@ Figure: [trainings_card_counts.png](output/png/eda/trainings_card_counts.png)
 - Boxplots show **n, min, Q1, median, Q3, max** in a corner box (dates as `YYYY-MM-DD`).
 
 **Conclusion.** The pictures in the sections above can be read without going back to the text files for the main frequencies and quartiles. The underlying numbers are unchanged.
+
+---
+
+## 7. Inclusive training duration (end − start + 1)
+
+**What was done.** Training length was first computed as calendar difference only (`end − start`), which made same-day courses 0 days and pulled the average down by 1. Duration is now **inclusive of both dates**:
+
+`(Koolituse lõpp − Koolituse algus).days + 1`
+
+Unemployment duration is unchanged (`end − start` for completed spells only).
+
+Updated summaries: [output/txt/descriptives.txt](output/txt/descriptives.txt), [output/txt/overview.txt](output/txt/overview.txt). Duration figures in [output/png/eda](output/png/eda) were regenerated.
+
+| Statistic | Exclusive (old) | Inclusive (current) |
+| --- | --- | --- |
+| Mean / average | 36.3 days | **37.3 days** |
+| Median | 23 | **24** |
+| Std | 38.2 | 38.2 |
+| IQR | 59 | 59 |
+| Min–max | 0–397 | **1–398** |
+| Same-day courses (n=393, 10%) | 0 days | **1 day** |
+
+**Conclusion.** Adding one day to every training shifts location statistics by 1 and leaves spread (std, IQR) the same. The average training duration is **37.3 days**. Same-day start and end is a 1-day course, not a zero-length one.
 
 All figures: [output/png/eda](output/png/eda). All text summaries: [output/txt](output/txt).

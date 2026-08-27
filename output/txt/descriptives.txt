@@ -207,13 +207,15 @@ Variable: Koolituskaart  [categorical]
 Variable: Koolituse kestus (päeva)  [numeric]
 ------------------------------------------------------------------------
   count:     3,930
-  sum:       142,662.00
-  avg:       36.3008
-  mean:      36.3008
-  median:    23.0000
+  sum:       146,592.00
+  avg:       37.3008
+  mean:      37.3008
+  median:    24.0000
   std:       38.2446
   iqr:       59.0000
-  min:       0
-  max:       397
+  min:       1
+  max:       398
   missing:   0
+
+  note: training duration is inclusive (end − start + 1 days); same calendar day = 1.
 

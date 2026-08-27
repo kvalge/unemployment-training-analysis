@@ -152,6 +152,13 @@ def _iqr(series: pd.Series) -> float:
 def add_durations(
     unemployed: pd.DataFrame, trainings: pd.DataFrame
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Add spell/course length in days.
+
+    Training duration is inclusive of both start and end dates
+    (end − start + 1), so a same-day course is 1 day, not 0.
+    Unemployment duration stays as the calendar difference
+    (end − start) and is missing when the spell is still open.
+    """
     unemployed = unemployed.copy()
     trainings = trainings.copy()
     unemployed[DURATION_UNEMPLOYED] = (
@@ -159,7 +166,7 @@ def add_durations(
     ).dt.days
     trainings[DURATION_TRAINING] = (
         trainings["Koolituse lõpp"] - trainings["Koolituse algus"]
-    ).dt.days
+    ).dt.days + 1
     return unemployed, trainings
 
 
@@ -219,7 +226,7 @@ def _overview_block(label: str, df: pd.DataFrame) -> list[str]:
                 f"(of {len(both):,})"
             )
             lines.append(
-                f"  Trainings with end equal to start (0-day): {n_zero:,} "
+                f"  Trainings with end equal to start (counted as 1 day): {n_zero:,} "
                 f"({100 * n_zero / len(both):.1f}%)"
             )
     lines.append("")
@@ -374,6 +381,11 @@ def write_descriptives(
     lines += _variable_block(
         DURATION_TRAINING, trainings_with_duration[DURATION_TRAINING]
     )
+    lines += [
+        "  note: training duration is inclusive (end − start + 1 days); "
+        "same calendar day = 1.",
+        "",
+    ]
     path = TXT_DIR / "descriptives.txt"
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return path

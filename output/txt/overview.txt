@@ -89,5 +89,5 @@ Non-null count by column
 Date order checks (end >= start, among non-null pairs)
 ------------------------------------------------------------------------
   Trainings with end before start: 0 (of 3,930)
-  Trainings with end equal to start (0-day): 393 (10.0%)
+  Trainings with end equal to start (counted as 1 day): 393 (10.0%)
 
