@@ -1,0 +1,15 @@
+---
+description: After every completed task, append a short entry to docs/process.md
+alwaysApply: true
+---
+
+# Log completed tasks
+
+After each task is finished, append one numbered entry to `docs/process.md`.
+
+- Write **after** the work is done, not before.
+- One entry per completed task, newest last.
+- Use today's date as a `## YYYY-MM-DD` heading if that day is not already in the file; continue numbering under the current date.
+- Keep each entry short: bold title plus 1–3 bullets on what changed and where.
+- Do not rewrite or delete earlier entries.
+- This includes the current user request: when the requested work is done, log it too.

@@ -1,0 +1,14 @@
+---
+description: After every completed task, write a copy-pasteable commit message in chat
+alwaysApply: true
+---
+
+# Commit message in chat
+
+After each completed task, include a ready-to-use git commit message in the chat reply.
+
+- Put it near the end of the reply, clearly labeled (for example **Commit message**).
+- 1–2 sentences that focus on why, not a file list.
+- Cover only the work from that task.
+- Do not run `git commit` unless the user explicitly asks to commit.
+- Do this in addition to appending the task to `docs/process.md`.
