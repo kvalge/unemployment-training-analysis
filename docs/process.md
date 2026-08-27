@@ -35,3 +35,6 @@ Completed tasks, newest last.
 
 9. **Chart colours**
    - Set PNG colours to main `#4ba7a2` and secondary `#9cd8da`, then regenerated EDA and analysis figures.
+
+10. **Share sent vs not sent among unemployed**
+    - Added `src/analysis/sent_share.py`: share of unemployed sent to training vs not sent, by county, age group, and gender. Wrote `output/txt/sent_share.txt` and three figures in `output/png/analysis`.
