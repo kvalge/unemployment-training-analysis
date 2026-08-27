@@ -35,13 +35,24 @@ plt.rcParams.update(
         "hist.bins": 30,
     }
 )
-BAR_COLOR = "#3d5a80"
-HIST_COLOR = "#3d5a80"
+BAR_COLOR = "#4ba7a2"
+HIST_COLOR = "#4ba7a2"
+SECONDARY_COLOR = "#9cd8da"
 LABEL_BOX = {
     "boxstyle": "round,pad=0.35",
     "facecolor": "white",
-    "edgecolor": "#293241",
+    "edgecolor": "#4ba7a2",
     "linewidth": 0.6,
+}
+BOXPLOT_STYLE = {
+    "tick_labels": [""],
+    "widths": 0.45,
+    "patch_artist": True,
+    "boxprops": {"facecolor": SECONDARY_COLOR, "edgecolor": BAR_COLOR},
+    "medianprops": {"color": BAR_COLOR, "linewidth": 2},
+    "whiskerprops": {"color": BAR_COLOR},
+    "capprops": {"color": BAR_COLOR},
+    "flierprops": {"marker": "o", "markersize": 3, "alpha": 0.4, "markeredgecolor": BAR_COLOR},
 }
 
 
@@ -429,14 +440,7 @@ def plot_boxplot(series: pd.Series, title: str, ylabel: str, filename: str) -> P
     data = series.dropna().to_numpy()
     ax.boxplot(
         data,
-        tick_labels=[""],
-        widths=0.45,
-        patch_artist=True,
-        boxprops={"facecolor": "#98c1d9", "edgecolor": "#293241"},
-        medianprops={"color": "#ee6c4d", "linewidth": 2},
-        whiskerprops={"color": "#293241"},
-        capprops={"color": "#293241"},
-        flierprops={"marker": "o", "markersize": 3, "alpha": 0.4},
+        **BOXPLOT_STYLE,
     )
     _annotate_numeric_box(ax, data)
     ax.set_title(title)
@@ -472,14 +476,7 @@ def plot_date_boxplot(series: pd.Series, title: str, filename: str) -> Path:
     data = mdates.date2num(pd.to_datetime(series.dropna()))
     ax.boxplot(
         data,
-        tick_labels=[""],
-        widths=0.45,
-        patch_artist=True,
-        boxprops={"facecolor": "#98c1d9", "edgecolor": "#293241"},
-        medianprops={"color": "#ee6c4d", "linewidth": 2},
-        whiskerprops={"color": "#293241"},
-        capprops={"color": "#293241"},
-        flierprops={"marker": "o", "markersize": 3, "alpha": 0.4},
+        **BOXPLOT_STYLE,
     )
     _annotate_date_box(ax, data)
     ax.yaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))

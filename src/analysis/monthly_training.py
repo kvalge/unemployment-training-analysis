@@ -15,8 +15,8 @@ PNG_DIR = PROJECT_ROOT / "output" / "png" / "analysis"
 
 PARTICIPATED_RESULTS = ("katkestas", "lõpetas")
 
-SENT_COLOR = "#3d5a80"
-PARTICIPATED_COLOR = "#ee6c4d"
+SENT_COLOR = "#4ba7a2"
+PARTICIPATED_COLOR = "#9cd8da"
 
 plt.rcParams.update(
     {

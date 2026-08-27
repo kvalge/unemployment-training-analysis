@@ -32,3 +32,6 @@ Completed tasks, newest last.
 
 8. **Monthly sent vs participated**
    - Added `src/analysis/monthly_training.py`: by start month, count all IDs sent to training vs IDs who participated (`lõpetas` or `katkestas`). Wrote `output/txt/monthly_training.txt` and `output/png/analysis/monthly_sent_vs_participated.png`.
+
+9. **Chart colours**
+   - Set PNG colours to main `#4ba7a2` and secondary `#9cd8da`, then regenerated EDA and analysis figures.
