@@ -1,4 +1,7 @@
-"""Exploratory data analysis of the unemployed and training tables."""
+"""
+Exploratory data analysis of the unemployed and training tables.
+To run: python -m src.inspect.eda
+"""
 
 from __future__ import annotations
 

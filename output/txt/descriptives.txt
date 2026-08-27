@@ -118,8 +118,8 @@ TABLE: trainings (koolitused.xls)
 
 Variable: ID  [identifier]
 ------------------------------------------------------------------------
-  count:     3,930
-  unique:    3,930
+  count:     3,929
+  unique:    3,929
   min:       1
   max:       5,000
   sum/avg/mean/median/std/iqr: not meaningful for an identifier
@@ -127,12 +127,12 @@ Variable: ID  [identifier]
 
 Variable: Koolituse algus  [datetime]
 ------------------------------------------------------------------------
-  count:     3,930
+  count:     3,929
   sum:       not applicable (dates)
   avg:       2024-11-02
   mean:      2024-11-02
   median:    2024-10-23
-  std:       56.0909 days
+  std:       56.0979 days
   iqr:       63.0000 days
   min:       2024-05-13
   max:       2025-03-24
@@ -140,12 +140,12 @@ Variable: Koolituse algus  [datetime]
 
 Variable: Koolituse lõpp  [datetime]
 ------------------------------------------------------------------------
-  count:     3,930
+  count:     3,929
   sum:       not applicable (dates)
   avg:       2024-12-09
   mean:      2024-12-09
   median:    2024-11-27
-  std:       46.6745 days
+  std:       46.6791 days
   iqr:       72.0000 days
   min:       2024-08-26
   max:       2025-09-13
@@ -153,7 +153,7 @@ Variable: Koolituse lõpp  [datetime]
 
 Variable: Koolituse ametiala  [categorical]
 ------------------------------------------------------------------------
-  count:     3,930
+  count:     3,929
   unique:    7
   mode:      elektrikud ja elektrimehaanikud (n=1,183)
   sum:       not applicable (categorical)
@@ -166,16 +166,16 @@ Variable: Koolituse ametiala  [categorical]
     elektrikud ja elektrimehaanikud                     1,183  ( 30.1%)
     pagarid                                             1,027  ( 26.1%)
     müüjad ja demonstraatorid                             903  ( 23.0%)
-    finants-ja haldusjuhid                                657  ( 16.7%)
+    finants-ja haldusjuhid                                656  ( 16.7%)
     abilised ja koristajad kontoris, hotellis jms asutuses     97  (  2.5%)
     keevitajad ja leeklõikajad                             51  (  1.3%)
-    raaamatupidamine                                       12  (  0.3%)
+    raamatupidamine                                        12  (  0.3%)
 
 Variable: Koolituse tulemus  [categorical]
 ------------------------------------------------------------------------
-  count:     3,930
+  count:     3,929
   unique:    5
-  mode:      lõpetas (n=3,646)
+  mode:      lõpetas (n=3,645)
   sum:       not applicable (categorical)
   avg/mean:  not applicable (categorical)
   median:    not applicable (categorical)
@@ -183,7 +183,7 @@ Variable: Koolituse tulemus  [categorical]
   iqr:       not applicable (categorical)
   missing:   0
   value counts:
-    lõpetas                                             3,646  ( 92.8%)
+    lõpetas                                             3,645  ( 92.8%)
     loobus                                                129  (  3.3%)
     katkestas                                             119  (  3.0%)
     jäi ära                                                26  (  0.7%)
@@ -191,9 +191,9 @@ Variable: Koolituse tulemus  [categorical]
 
 Variable: Koolituskaart  [categorical]
 ------------------------------------------------------------------------
-  count:     3,930
+  count:     3,929
   unique:    2
-  mode:      ei (n=2,546)
+  mode:      ei (n=2,545)
   sum:       not applicable (categorical)
   avg/mean:  not applicable (categorical)
   median:    not applicable (categorical)
@@ -201,17 +201,17 @@ Variable: Koolituskaart  [categorical]
   iqr:       not applicable (categorical)
   missing:   0
   value counts:
-    ei                                                  2,546  ( 64.8%)
+    ei                                                  2,545  ( 64.8%)
     jah                                                 1,384  ( 35.2%)
 
 Variable: Koolituse kestus (päeva)  [numeric]
 ------------------------------------------------------------------------
-  count:     3,930
-  sum:       146,592.00
-  avg:       37.3008
-  mean:      37.3008
+  count:     3,929
+  sum:       146,582.00
+  avg:       37.3077
+  mean:      37.3077
   median:    24.0000
-  std:       38.2446
+  std:       38.2470
   iqr:       59.0000
   min:       1
   max:       398

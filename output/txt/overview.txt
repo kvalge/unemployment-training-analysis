@@ -49,7 +49,7 @@ Date order checks (end >= start, among non-null pairs)
 ========================================================================
 TABLE: trainings (koolitused.xls)
 ========================================================================
-Shape: 3,930 rows × 6 columns
+Shape: 3,929 rows × 6 columns
 
 Column types
 ------------------------------------------------------------------------
@@ -74,20 +74,20 @@ Duplications
 ------------------------------------------------------------------------
   Duplicate rows:              0
   Duplicate ID values:         0
-  Unique IDs:                  3,930
+  Unique IDs:                  3,929
   ID unique:                   True
 
 Non-null count by column
 ------------------------------------------------------------------------
-  ID                               3,930
-  Koolituse algus                  3,930
-  Koolituse lõpp                   3,930
-  Koolituse ametiala               3,930
-  Koolituse tulemus                3,930
-  Koolituskaart                    3,930
+  ID                               3,929
+  Koolituse algus                  3,929
+  Koolituse lõpp                   3,929
+  Koolituse ametiala               3,929
+  Koolituse tulemus                3,929
+  Koolituskaart                    3,929
 
 Date order checks (end >= start, among non-null pairs)
 ------------------------------------------------------------------------
-  Trainings with end before start: 0 (of 3,930)
+  Trainings with end before start: 0 (of 3,929)
   Trainings with end equal to start (counted as 1 day): 393 (10.0%)
 
