@@ -66,9 +66,9 @@ Numeric summaries used below are copied from that file. Categorical value counts
 
 Almost even split: **2,593 men (51.9%)** and **2,403 women (48.1%)**. No missing values.
 
-![Unemployed persons by sex](output/png/unemployed_sex_counts.png)
+![Unemployed persons by sex](output/png/eda/unemployed_sex_counts.png)
 
-Other figure: [unemployed_sex_counts.png](output/png/unemployed_sex_counts.png)
+Other figure: [unemployed_sex_counts.png](output/png/eda/unemployed_sex_counts.png)
 
 **Conclusion.** Sex is balanced enough that later comparisons by sex will not be driven by a tiny group.
 
@@ -85,9 +85,9 @@ Age is the only original numeric measure on this table.
 | IQR | 18 (about 31 to 49) |
 | Min–max | 15–61 |
 
-![Age of unemployed persons (histogram)](output/png/unemployed_age_hist.png)
+![Age of unemployed persons (histogram)](output/png/eda/unemployed_age_hist.png)
 
-![Age of unemployed persons (boxplot)](output/png/unemployed_age_box.png)
+![Age of unemployed persons (boxplot)](output/png/eda/unemployed_age_box.png)
 
 **Conclusion.** Age is centred on 40 and roughly symmetric: mean and median agree, and the boxplot whiskers reach the observed min and max with **no Tukey outliers**. The working-age window 15–61 is plausible for an unemployment register. The histogram is jagged year-to-year rather than a smooth bell curve; that is expected with integer age and a few thousand people, not a data error.
 
@@ -95,7 +95,7 @@ Age is the only original numeric measure on this table.
 
 15 counties, no missing values. The distribution is highly concentrated.
 
-![Unemployed persons by county](output/png/unemployed_county_counts.png)
+![Unemployed persons by county](output/png/eda/unemployed_county_counts.png)
 
 Tallinn ja Harjumaa alone is **1,763 people (35.3%)**. Together with Ida-Virumaa (15.6%), Tartumaa (11.3%), and Pärnumaa (8.3%) these four areas are about **70%** of the sample. The smallest counties (Võrumaa, Hiiumaa, Jõgevamaa) each have under 80 people.
 
@@ -109,10 +109,10 @@ Tallinn ja Harjumaa alone is **1,763 people (35.3%)**. Together with Ida-Virumaa
 
 Figures:
 
-- [unemployed_start_hist.png](output/png/unemployed_start_hist.png)
-- [unemployed_start_box.png](output/png/unemployed_start_box.png)
-- [unemployed_end_hist.png](output/png/unemployed_end_hist.png)
-- [unemployed_end_box.png](output/png/unemployed_end_box.png)
+- [unemployed_start_hist.png](output/png/eda/unemployed_start_hist.png)
+- [unemployed_start_box.png](output/png/eda/unemployed_start_box.png)
+- [unemployed_end_hist.png](output/png/eda/unemployed_end_hist.png)
+- [unemployed_end_box.png](output/png/eda/unemployed_end_box.png)
 
 **Conclusion.** This looks like a snapshot extract: everyone has a start date, but an end date appears only if the spell closed in the recent observation window. Open spells (59%) must be treated as censored, not as missing at random in the usual sense.
 
@@ -131,9 +131,9 @@ Duration in days is `Töötuse lõpp − Töötuse algus`, so it exists only for
 
 Mean well above the median shows right skew and a heavy tail of long spells.
 
-![Unemployment duration, completed spells (histogram)](output/png/unemployed_duration_hist.png)
+![Unemployment duration, completed spells (histogram)](output/png/eda/unemployed_duration_hist.png)
 
-Boxplot: [unemployed_duration_box.png](output/png/unemployed_duration_box.png)
+Boxplot: [unemployed_duration_box.png](output/png/eda/unemployed_duration_box.png)
 
 **Conclusion.** Completed durations are **bimodal**, with a cluster under about 500 days and another around 1,000–1,700 days, and almost no mass in between. Combined with the narrow end-date window, duration largely reflects *when the spell started*. The gap is worth carrying into later work: it may be two entry cohorts, an administrative feature, or censoring of mid-length spells that are still open. Duration statistics **cannot** be read as typical length for everyone, because the 2,947 open spells are excluded.
 
@@ -160,13 +160,13 @@ Derived duration:
 | IQR | 59 |
 | Min–max | 0–397 days |
 
-![Training duration (histogram)](output/png/trainings_duration_hist.png)
+![Training duration (histogram)](output/png/eda/trainings_duration_hist.png)
 
 Other figures:
 
-- [trainings_duration_box.png](output/png/trainings_duration_box.png)
-- [trainings_start_hist.png](output/png/trainings_start_hist.png)
-- [trainings_start_box.png](output/png/trainings_start_box.png)
+- [trainings_duration_box.png](output/png/eda/trainings_duration_box.png)
+- [trainings_start_hist.png](output/png/eda/trainings_start_hist.png)
+- [trainings_start_box.png](output/png/eda/trainings_start_box.png)
 
 **Conclusion.** Most courses are short: the histogram piles up near 0–15 days, then a smaller group around one to four months, and a long tail to 397 days. **10% last zero days** (start = end). Median 23 vs mean 36 confirms right skew. Unlike unemployment, every training has both dates, so duration is not censored here.
 
@@ -184,13 +184,13 @@ Seven occupations. Four dominate:
 | keevitajad ja leeklõikajad | 51 | 1.3% |
 | raaamatupidamine | 12 | 0.3% |
 
-![Trainings by occupation](output/png/trainings_occupation_counts.png)
+![Trainings by occupation](output/png/eda/trainings_occupation_counts.png)
 
 **Conclusion.** Electricians, bakers, and sales roles are the main programmes. Accounting (`raaamatupidamine`, 12 rows) is too small for stable subgroup estimates. The triple-a in `raaamatupidamine` and the missing space in `finants-ja haldusjuhid` look like source typos, not extra categories.
 
 ### 4.4 Result (`Koolituse tulemus`)
 
-![Trainings by result](output/png/trainings_result_counts.png)
+![Trainings by result](output/png/eda/trainings_result_counts.png)
 
 **92.8% finished (`lõpetas`, 3,646).** Withdrawal (`loobus`, 3.3%) and interruption (`katkestas`, 3.0%) are small. Cancelled (`jäi ära`, 0.7%) and refused (`keeldus`, 0.3%) are rare.
 
@@ -200,7 +200,7 @@ Seven occupations. Four dominate:
 
 **ei** 2,546 (64.8%), **jah** 1,384 (35.2%). The raw file had a trailing space on `ei`; the loader strips it, so only these two values remain.
 
-Figure: [trainings_card_counts.png](output/png/trainings_card_counts.png)
+Figure: [trainings_card_counts.png](output/png/eda/trainings_card_counts.png)
 
 **Conclusion.** About one third of trainings are flagged with a training card. The variable is usable as a binary indicator.
 
@@ -219,7 +219,7 @@ Figure: [trainings_card_counts.png](output/png/trainings_card_counts.png)
 
 ## 6. Value labels on figures
 
-**What was done.** All PNGs in [output/png](output/png) were regenerated with numbers on the chart:
+**What was done.** All PNGs in [output/png/eda](output/png/eda) were regenerated with numbers on the chart. Exploratory figures are kept in this subfolder so later plots can go in other folders under `output/png`.
 
 - Bar charts show **count and share** on each bar (for example `1,763 (35.3%)`).
 - Histograms show **bin counts** on the bars, plus n / mean / median in a corner box.
@@ -227,4 +227,4 @@ Figure: [trainings_card_counts.png](output/png/trainings_card_counts.png)
 
 **Conclusion.** The pictures in the sections above can be read without going back to the text files for the main frequencies and quartiles. The underlying numbers are unchanged.
 
-All figures: [output/png](output/png). All text summaries: [output/txt](output/txt).
+All figures: [output/png/eda](output/png/eda). All text summaries: [output/txt](output/txt).

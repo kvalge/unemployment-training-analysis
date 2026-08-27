@@ -14,7 +14,7 @@ from src.load_data import load_raw_data
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 OUTPUT_DIR = PROJECT_ROOT / "output"
 TXT_DIR = OUTPUT_DIR / "txt"
-PNG_DIR = OUTPUT_DIR / "png"
+PNG_DIR = OUTPUT_DIR / "png" / "eda"
 
 UNEMPLOYED_LABEL = "unemployed (töötud.xls)"
 TRAININGS_LABEL = "trainings (koolitused.xls)"

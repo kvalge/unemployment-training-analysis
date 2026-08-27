@@ -23,3 +23,6 @@ Completed tasks, newest last.
 
 5. **Value labels on figures**
    - Added counts, percentages, and five-number summaries onto the EDA PNGs so the numbers are readable on the charts.
+
+6. **Separate EDA figure folder**
+   - Moved exploratory PNGs to `output/png/eda` so later figures can live in other folders under `output/png`.
