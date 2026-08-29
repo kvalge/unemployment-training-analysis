@@ -513,11 +513,15 @@ These points follow from sections 1–14. They are patterns in this extract, not
 
 6. **Training card (`jah`) goes with slightly higher completion and lower `katkestas`.** It is a useful flag for later models, not by itself a recommendation to issue more cards.
 
-7. **Do not read closed spells as a training outcome.** Open-spell share is 59% with or without training (not sent 41.0% ended vs participants 40.9%). Median length among ended spells is 298 vs 285 days. People who interrupt (`katkestas`) leave more often (62.2%) than completers (40.2%) — that looks like selection, not a training effect. End dates are a snapshot artefact. A follow-up file with later exits would be needed to study employment effects.
+7. **Do not read closed spells as a training outcome.** Open-spell share is 59% with or without training. End dates are a snapshot artefact. A follow-up file with later exits would be needed to study employment effects.
 
 8. **October 2024 is the volume peak** for starts; late-summer months have a slightly higher dropout rate but still low in absolute terms. Capacity planning should follow October-scale volume, not the 2022–2023 gap (there is no inflow in those years in this file).
 
-Full numbers: [output/txt/insights.txt](output/txt/insights.txt). Figures: [output/png/analysis](output/png/analysis).
+9. **Participating in training is not associated with a shorter spell or a higher chance the spell has ended** (section 13). Not sent vs participants: **41.0%** vs **40.9%** ended; median length among ended spells **298 vs 285 days**. The 2024–2025 cohort (most of the sample) is essentially the same (40.6% vs 41.9% ended; median 248 vs 241 days). People who get a course have already waited (median 194 days). This snapshot does **not** show that training shortens unemployment.
+
+10. **Finishing the course does not line up with leaving unemployment; interrupting does — and that is selection, not impact** (section 14). `lõpetas` **40.2%** ended vs `katkestas` **62.2%**. Total length among those who left is similar (median 285 vs 281 days); time after training start is shorter for `katkestas` (median 71 vs 93 days). Completers are more often still unemployed when the extract is taken. `katkestas` is only 119 people. Do not treat completion as a re-employment success metric in this file.
+
+Full numbers: [output/txt/insights.txt](output/txt/insights.txt), [output/txt/duration_impact.txt](output/txt/duration_impact.txt). Figures: [output/png/analysis](output/png/analysis).
 
 
 ## Analysis done by Codex

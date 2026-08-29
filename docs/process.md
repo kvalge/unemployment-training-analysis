@@ -60,3 +60,6 @@ Completed tasks, newest last.
 16. **Unemployment length vs training**
     - Added `src/analysis/duration_impact.py`: not sent vs participants, and `lõpetas` vs `katkestas`, using UE length and days from training start to UE end.
     - Wrote `output/txt/duration_impact.txt` and figures in `output/png/analysis`; filled `ANALYSIS.md` sections 13–14. Hooked into `main.py`.
+
+17. **Duration conclusions in the summary**
+    - Added section 13 and 14 overall conclusions as items 9–10 in `ANALYSIS.md` section 15.
