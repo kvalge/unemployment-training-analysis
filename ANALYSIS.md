@@ -460,3 +460,47 @@ These points follow from sections 1–12. They are patterns in this extract, not
 8. **October 2024 is the volume peak** for starts; late-summer months have a slightly higher dropout rate but still low in absolute terms. Capacity planning should follow October-scale volume, not the 2022–2023 gap (there is no inflow in those years in this file).
 
 Full numbers: [output/txt/insights.txt](output/txt/insights.txt). Figures: [output/png/analysis](output/png/analysis).
+
+
+## Analysis done by Codex
+Key Insights
+1. Training participation is very high: 3,929 of 4,996 unemployed people appear in the training table, about 78.6%.
+2. Training does not strongly separate unemployment closure rates overall: trained people had a 41.0% unemployment-ended rate, almost identical to untrained people at 41.0%.
+3. Among completed unemployment spells, trained people had a slightly shorter median duration: 285 days vs 298 days for untrained people.
+4. Training outcomes are generally strong: 92.8% completed, 3.3% dropped out, and the median training length was 23 days.
+5. Men and women participated at almost identical rates, but their outcomes differ:
+  - Men: higher unemployment closure rate among training records, 45.0%, and shorter median time from training start to unemployment end, 79 days.
+  - Women: higher training completion rate, 93.4% vs 92.2%, and lower dropout rate, 2.4% vs 4.1%.
+6. Age pattern: people aged 45-54 and 35-44 had the best training completion rates, about 94%. The youngest group had the highest unemployment closure rate, about 50.5%.
+7. Regional pattern is pronounced:
+  - Highest training completion: Järvamaa 96.8%, Valgamaa 96.4%, Võrumaa 96.0%.
+  - Lowest among sizable groups: Viljandimaa 88.8%, Pärnumaa 89.6%, Ida-Virumaa 90.4%.
+  - Highest training participation: Valgamaa 89.7%.
+  - Lowest training participation: Hiiumaa 62.1%, Ida-Virumaa 74.9%, Pärnumaa 76.3%.
+8. Training volume peaks sharply in October 2024 with 1,213 training records. The Koolituskaart share rises dramatically from near zero in summer 2024 to 74.0% in December 2024 and 80.5% in January 2025, suggesting a policy/process/channel shift over time.
+9. Median time from unemployment start to training was 194 days, so training usually happens well into the unemployment spell, not immediately.
+10. Training areas are concentrated: electricians, bakers, sellers/demonstrators, and finance/administration managers dominate the training records.
+11. By field, bakers had a lower completion rate (91.2%) but a higher unemployment closure rate (45.2%) than the largest fields, while electricians had strong completion (93.6%) but lower unemployment closure (38.0%).
+Important caveat: these are descriptive patterns, not causal effects. Since training often starts months after unemployment begins, the raw comparison between trained and untrained groups is likely affected by selection and timing.
+
+
+## Analysis done by Claude AI
+1. A sharp, gap-filled surge in registrations, then a male-heavy pivot. New unemployment registrations jump from a trickle in 2020–2021 to 800–1,100 people/quarter from late 2021 and 2024 (there's a data gap for 2022–2023 — no records at all, so treat the line as two separate episodes, not a smooth trend). Within the 2024–2025 wave, the gender mix flips hard: men were a minority of new registrants in Q1–Q2 2024 (44–46%), then swung to 64% in Q3, 70% in Q4, and 73% by Q1 2025. This lines up with the training data — from Q3 2024 on, registrations in male-coded fields (electricians/electromechanics, welders) rise sharply relative to the female-coded ones (bakers, sales/demonstrators), suggesting a wave of layoffs concentrated in industrial/technical occupations hit later in 2024.
+
+2. Finishing the training predicts staying unemployed, not finding a job. This is the most counterintuitive pattern in the data:
+
+People who completed their training: only 40% had left the unemployment register.
+People who quit or refused training (loobus/keeldus): 41–70% had already left — likely because they'd found work and no longer needed it.
+People who had their training interrupted (katkestas): 62% found work.
+
+So training completion looks like it's picking up people who are further from re-employment, not causing better outcomes — a classic case where the "successful" completers are a different population than the quick dropouts, not a training-effectiveness signal.
+
+3. Consistent group gaps in getting back to work:
+
+Gender: men leave the register at 45%, women at 37% — and women who do leave took ~500 days on average vs. 463 for men.
+Age: re-employment falls steadily with age — 50% for 15–24-year-olds down to 37% for 45–54-year-olds, ticking back up slightly (38%) for 55–61.
+County: huge spread — Võrumaa leads at 63% re-employed (and the shortest average spell, ~325 days), while Valgamaa trails at 25% (592-day average spell) — more than double the wait time between the best and worst counties.
+
+4. Training itself runs smoothly — 93% completion overall — with little variation by gender or age, but a real gap by field: accounting (raamatupidamine, a tiny group of 12) completes at only 83%, welders at 88%, versus 94%+ for electricians, sales staff, and office/hotel support roles.
+
+5. The "koolituskaart" (training card) is a brand-new instrument. It's essentially unused through Q3 2024 (0–3% of trainees), then suddenly covers 44% of trainees in Q4 2024 and 56% in Q1 2025 — a clean signature of a policy or program change introduced in late 2024, worth checking against known Töötukassa policy timelines.
