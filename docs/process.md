@@ -50,3 +50,9 @@ Completed tasks, newest last.
 
 14. **Task prompt catalog**
     - Added `docs/commands.md` with the prompt text for each completed task from `docs/process.md`, and linked it from `README.md`.
+
+## 2026-08-29
+
+15. **Patterns and interactions**
+    - Added `src/analysis/insights.py` for cohort gap, wait to training, one-day results, age×gender sent rates, and training card vs result.
+    - Wrote `output/txt/insights.txt`, five figures in `output/png/analysis`, and sections 12–13 in `ANALYSIS.md`. Hooked the step into `main.py`.

@@ -361,3 +361,102 @@ Month is the start month with years pooled (January 2025 with January 2024, and 
 **Conclusion.** Among people who actually take part, **almost everyone finishes (96.8%)**. `katkestas` is a 3.2% event. It is a little more common for welders, Viljandimaa, younger and older participants, women, and late-summer starts — but no split turns dropout into a large share. Volume of dropouts follows volume of participants (October), not the highest rates. May and tiny subjects should not drive the story.
 
 Figures: [output/png/analysis](output/png/analysis). Table: [output/txt/completion_share.txt](output/txt/completion_share.txt).
+
+---
+
+## 12. Patterns, interactions, and differences
+
+**What was done.** After the one-way splits, the joined tables were used to look for interactions: unemployment-start year, wait from unemployment to training, one-day course records vs result, whether the spell is still open vs sent to training, sent share by **age × gender**, training card vs result, and result mix by gender.
+
+Code: `src/analysis/insights.py`. Table: [output/txt/insights.txt](output/txt/insights.txt).
+
+### Two entry cohorts, not a smooth time series
+
+![Unemployment spell starts by year](output/png/analysis/insights_start_year.png)
+
+There are **no unemployment starts in 2022 or 2023**. Starts cluster in **2021 (1,216)** and **2024 (3,633)**, with a thin tail in 2017–2020 and 52 starts in early 2025. That empty two-year gap is the same hole seen earlier in completed-spell duration (section 3.6). The extract is two stacked cohorts, not a continuous inflow.
+
+### Wait to training is the same two cohorts
+
+![Days from unemployment start to training start](output/png/analysis/insights_wait_hist.png)
+
+Among 3,929 people sent to training, wait (`Koolituse algus − Töötuse algus`) has mean **409 days** and median **194**. The histogram is bimodal:
+
+| Cohort of `Töötuse algus` | n | Median wait | Mean wait |
+| --- | ---: | ---: | ---: |
+| 2017–2021 | 1,017 | **1,093 days** (~3 years) | 1,138 |
+| 2024–2025 | 2,912 | **146 days** (~5 months) | 154 |
+
+Almost nobody waits 366–500 days (29 people). The long waits are 2021 (and earlier) spells whose training only starts in 2024–2025. Timing errors are rare: **4** trainings begin before unemployment, **8** after the spell already ended.
+
+**Conclusion.** “Long wait to training” is mostly **when the spell started**, not a separate queue process. Do not treat wait as a continuous policy lever without splitting these cohorts.
+
+### One-day records explain withdrawal, cancel, and refuse
+
+![One-day training records by result](output/png/analysis/insights_one_day_by_result.png)
+
+All **393** same-day courses (section 4.2) line up with result:
+
+| Result | n | 1-day share |
+| --- | ---: | ---: |
+| loobus | 129 | **100%** |
+| jäi ära | 26 | **100%** |
+| keeldus | 10 | **100%** |
+| katkestas | 119 | 8.4% |
+| lõpetas | 3,645 | 6.0% |
+
+`loobus`, `jäi ära`, and `keeldus` never have a multi-day duration. They look like **administrative one-day placeholders**, not short courses. Most `katkestas` and `lõpetas` rows are real multi-day trainings (median 34 and 26 days). About 218 `lõpetas` rows are also 1-day — those can be genuine one-day completions.
+
+**Conclusion.** Compare finish vs dropout only on `lõpetas` + `katkestas` (as section 11 did). Do not fold `loobus` / `jäi ära` / `keeldus` into a “failed training” rate; they did not run as a course in the dates.
+
+### Training is not tied to whether the spell has closed
+
+**59.0%** of people who were sent still have an open spell, and **59.0%** of people who were not sent also do. In this snapshot, being sent to training does **not** mark who has already left unemployment. Exit dates remain bunched in the recent window (section 3.5); they are not an outcome of training in these files.
+
+### Gender gap appears only at age 55+
+
+![Sent-to-training share by age group and gender](output/png/analysis/insights_sent_age_gender.png)
+
+Overall sent share is the same for men and women (section 10). Crossed with age:
+
+| Age | Men sent | Women sent |
+| --- | ---: | ---: |
+| 15–24 | 78.6% (253/322) | 80.1% (169/211) |
+| 25–34 | 79.2% (484/611) | 79.5% (437/550) |
+| 35–44 | 80.6% (584/725) | 79.2% (536/677) |
+| 45–54 | 76.5% (538/703) | 79.5% (602/757) |
+| **55+** | **78.9% (183/232)** | **68.8% (143/208)** |
+
+The only clear interaction is **women 55+**: about **10 points** below men of the same age and below every younger group. Sample is 208 women, large enough to take seriously, small enough that county mix can still move the rate.
+
+Among those who *are* sent, men withdraw more (`loobus` 4.1% vs 2.4%) and women interrupt more (`katkestas` 3.7% vs 2.4%). Finish rates stay 92–93%.
+
+### Training card and result
+
+![Training result mix by training card](output/png/analysis/insights_card_by_result.png)
+
+With a card (`jah`, n=1,384): **lõpetas 94.8%**, `katkestas` only 1.1%, but `jäi ära` 1.5%. Without a card (`ei`, n=2,545): **lõpetas 91.7%**, `katkestas` 4.1%, `loobus` 3.7%. The card group finishes a bit more often and drops out less; cancelled courses (`jäi ära`) are more common with a card. This is association, not proof that the card causes completion.
+
+---
+
+## 13. Summary of actionable insights
+
+These points follow from sections 1–12. They are patterns in this extract, not causal effects of training on leaving unemployment.
+
+1. **The register here is two cohorts.** Unemployment starts stop after 2021 and resume in 2024; 2022–2023 are empty. Duration, wait to training, and “long-term unemployed” all inherit that hole. Any trend over time must be split into 2017–2021 vs 2024–2025.
+
+2. **Most people who are offered a course take it (95.8%) and finish it (96.8% of participants).** The scarce event is *not being sent* (21.4% of unemployed), not dropout. Targeting should focus on **who is left out**, not on a large dropout problem.
+
+3. **The group left out is not “men vs women” in general.** Sent rates are flat by sex until **women aged 55+ (68.8% vs 78.9% for men 55+)**. That is the main demographic interaction worth a programme check (referral rules, health, occupation mix).
+
+4. **County still matters for access.** Valgamaa 89.7% sent vs Hiiumaa 62.1%; large counties sit near 75–78%. Rates in tiny counties need care, but geography is a bigger access split than age 15–54 or gender overall.
+
+5. **`loobus`, `jäi ära`, and `keeldus` are 100% one-day rows.** Treat them as non-starts, not as failed multi-day courses. `katkestas` is the real in-course dropout (~3%).
+
+6. **Training card (`jah`) goes with slightly higher completion and lower `katkestas`.** It is a useful flag for later models, not by itself a recommendation to issue more cards.
+
+7. **Do not read closed spells as a training outcome.** Open-spell share is 59% with or without training. End dates are a snapshot artefact. A follow-up file with later exits would be needed to study employment effects.
+
+8. **October 2024 is the volume peak** for starts; late-summer months have a slightly higher dropout rate but still low in absolute terms. Capacity planning should follow October-scale volume, not the 2022–2023 gap (there is no inflow in those years in this file).
+
+Full numbers: [output/txt/insights.txt](output/txt/insights.txt). Figures: [output/png/analysis](output/png/analysis).

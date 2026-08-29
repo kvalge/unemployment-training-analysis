@@ -1,0 +1,72 @@
+Patterns and interactions (after univariate EDA)
+
+1. UNEMPLOYMENT START YEARS (cohort gap)
+------------------------------------------------------------------------
+  2017: n=    2  sent=    2  sent%=100.0%
+  2018: n=    2  sent=    1  sent%= 50.0%
+  2019: n=    4  sent=    3  sent%= 75.0%
+  2020: n=   87  sent=   68  sent%= 78.2%
+  2021: n=1,216  sent=  943  sent%= 77.5%
+  2022: n=0
+  2023: n=0
+  2024: n=3,633  sent=2,867  sent%= 78.9%
+  2025: n=   52  sent=   45  sent%= 86.5%
+  Years 2022 and 2023 have 0 and 0 starts.
+
+2. WAIT FROM UNEMPLOYMENT START TO TRAINING START (days)
+------------------------------------------------------------------------
+  n=3,929  mean=408.8  median=194.0
+  training before unemployment start: 4
+  same-day as unemployment start: 2
+  training after unemployment end: 8
+
+  Wait by bin:
+    <0              6
+    1–90          756
+    91–180      1,070
+    181–365     1,051
+    366–500        29
+    501–1000       75
+    1000+         942
+  Wait by unemployment-start cohort:
+    2017–2021: n=1,017  mean=1138.2  median=1093.0  min=915  max=2540
+    2024–2025: n=2,912  mean=154.1  median=146.0  min=-84  max=435
+
+3. ONE-DAY TRAININGS (inclusive duration = 1) BY RESULT
+------------------------------------------------------------------------
+  Total 1-day records: 393
+    jäi ära      n=   26  1-day=   26  (100.0%)
+    katkestas    n=  119  1-day=   10  (  8.4%)
+    keeldus      n=   10  1-day=   10  (100.0%)
+    loobus       n=  129  1-day=  129  (100.0%)
+    lõpetas      n=3,645  1-day=  218  (  6.0%)
+
+4. OPEN SPELL SHARE BY SENT STATUS
+------------------------------------------------------------------------
+    not sent  n=1,067  still open=629  (59.0%)
+    sent      n=3,929  still open=2,318  (59.0%)
+
+5. SENT SHARE BY AGE GROUP × GENDER
+------------------------------------------------------------------------
+  55+ women: 68.8% (143 of 208)
+  55+ men:   78.9% (183 of 232)
+    15–24 mees   n=  322  sent=  253  ( 78.6%)
+    15–24 naine  n=  211  sent=  169  ( 80.1%)
+    25–34 mees   n=  611  sent=  484  ( 79.2%)
+    25–34 naine  n=  550  sent=  437  ( 79.5%)
+    35–44 mees   n=  725  sent=  584  ( 80.6%)
+    35–44 naine  n=  677  sent=  536  ( 79.2%)
+    45–54 mees   n=  703  sent=  538  ( 76.5%)
+    45–54 naine  n=  757  sent=  602  ( 79.5%)
+    55+ mees   n=  232  sent=  183  ( 78.9%)
+    55+ naine  n=  208  sent=  143  ( 68.8%)
+
+6. TRAINING CARD × RESULT (row %)
+------------------------------------------------------------------------
+    kaart=ei: jäi ära 0.2% (n=5); katkestas 4.1% (n=104); keeldus 0.4% (n=9); loobus 3.7% (n=94); lõpetas 91.7% (n=2333)
+    kaart=jah: jäi ära 1.5% (n=21); katkestas 1.1% (n=15); keeldus 0.1% (n=1); loobus 2.5% (n=35); lõpetas 94.8% (n=1312)
+
+7. RESULT MIX BY GENDER (row %)
+------------------------------------------------------------------------
+    mees: jäi ära 0.9% (n=18); katkestas 2.4% (n=50); keeldus 0.4% (n=8); loobus 4.1% (n=83); lõpetas 92.2% (n=1883)
+    naine: jäi ära 0.4% (n=8); katkestas 3.7% (n=69); keeldus 0.1% (n=2); loobus 2.4% (n=46); lõpetas 93.4% (n=1762)

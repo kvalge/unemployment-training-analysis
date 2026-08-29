@@ -10,6 +10,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from src.analysis.completion_share import run_completion_share_analysis
+from src.analysis.insights import run_insights_analysis
 from src.analysis.monthly_training import run_monthly_training_analysis
 from src.analysis.sent_share import run_sent_share_analysis
 from src.inspect.eda import run_eda
@@ -18,25 +19,28 @@ from src.load_data.download import download_raw_data
 
 
 def main() -> None:
-    print("1/6 Download / ensure raw data")
+    print("1/7 Download / ensure raw data")
     download_raw_data()
 
-    print("2/6 Load tables")
+    print("2/7 Load tables")
     unemployed, trainings = load_raw_data()
     print(f"   töötud:     {unemployed.shape[0]:,} rows × {unemployed.shape[1]} cols")
     print(f"   koolitused: {trainings.shape[0]:,} rows × {trainings.shape[1]} cols")
 
-    print("3/6 Exploratory data analysis")
+    print("3/7 Exploratory data analysis")
     run_eda()
 
-    print("4/6 Monthly sent vs participated")
+    print("4/7 Monthly sent vs participated")
     run_monthly_training_analysis()
 
-    print("5/6 Share sent vs not sent to training")
+    print("5/7 Share sent vs not sent to training")
     run_sent_share_analysis()
 
-    print("6/6 Completion vs dropout among participants")
+    print("6/7 Completion vs dropout among participants")
     run_completion_share_analysis()
+
+    print("7/7 Patterns and interactions")
+    run_insights_analysis()
 
     print("Done.")
     print("   text:    output/txt")

@@ -38,7 +38,7 @@ That runs the full pipeline: ensure/download raw Excel files, load both tables, 
 data/raw/               raw Excel extracts
 src/load_data/          download/ensure and load both tables
 src/inspect/            EDA
-src/analysis/           monthly starts, sent vs not sent, completion vs dropout
+src/analysis/           monthly starts, sent shares, completion, interactions
 main.py                 run the full pipeline
 output/txt/             numeric tables
 output/png/eda/         exploratory charts
