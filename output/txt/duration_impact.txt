@@ -1,0 +1,63 @@
+Unemployment length and spell end vs training
+UE days = Töötuse lõpp − Töötuse algus (calendar days; missing if still open).
+After-train days = Töötuse lõpp − Koolituse algus (participants with an end date).
+Not sent have no Koolituse algus, so after-train days are empty for that group.
+
+13. NOT SENT vs PARTICIPATED (lõpetas or katkestas)
+------------------------------------------------------------------------------
+  not sent to training
+    n persons:              1,067
+    spell ended:            438  (41.0%)
+    still open:             629
+    UE days (lõpp − algus), ended spells only:
+      n=438  mean=513.9  median=298  IQR=884.5  min=23  max=2,385
+    Days from Koolituse algus to Töötuse lõpp, ended spells only:
+      n=0  mean=NA  median=NA  IQR=NA  min=NA  max=NA
+    UE end before training start: 0
+
+  participated (lõpetas or katkestas)
+    n persons:              3,764
+    spell ended:            1,539  (40.9%)
+    still open:             2,225
+    UE days (lõpp − algus), ended spells only:
+      n=1,539  mean=466.2  median=285  IQR=223  min=22  max=1,673
+    Days from Koolituse algus to Töötuse lõpp, ended spells only:
+      n=1,539  mean=90.2  median=91  IQR=77  min=-126  max=246
+    UE end before training start: 7
+
+14. LÕPETAS vs KATKESTAS (participants only)
+------------------------------------------------------------------------------
+  lõpetas
+    n persons:              3,645
+    spell ended:            1,465  (40.2%)
+    still open:             2,180
+    UE days (lõpp − algus), ended spells only:
+      n=1,465  mean=463.5  median=285  IQR=213  min=22  max=1,673
+    Days from Koolituse algus to Töötuse lõpp, ended spells only:
+      n=1,465  mean=91.1  median=93  IQR=77  min=-126  max=246
+    UE end before training start: 6
+
+  katkestas
+    n persons:              119
+    spell ended:            74  (62.2%)
+    still open:             45
+    UE days (lõpp − algus), ended spells only:
+      n=74  mean=520.3  median=280.5  IQR=906.5  min=56  max=1,623
+    Days from Koolituse algus to Töötuse lõpp, ended spells only:
+      n=74  mean=71.2  median=71  IQR=69.8  min=-47  max=233
+    UE end before training start: 1
+
+BY UNEMPLOYMENT-START COHORT
+------------------------------------------------------------------------------
+  2017–2021
+    not sent: n=294  ended=42.2%  median UE days=1,159.5  median after-train days=NA
+    participated: n=971  ended=38.1%  median UE days=1,177.5  median after-train days=102.5
+    lõpetas: n=935  ended=37.1%  median UE days=1,179  median after-train days=104
+    katkestas: n=36  ended=63.9%  median UE days=1,122  median after-train days=73
+
+  2024–2025
+    not sent: n=773  ended=40.6%  median UE days=247.5  median after-train days=NA
+    participated: n=2,793  ended=41.9%  median UE days=241  median after-train days=87
+    lõpetas: n=2,710  ended=41.3%  median UE days=242  median after-train days=89
+    katkestas: n=83  ended=61.4%  median UE days=226  median after-train days=69
+

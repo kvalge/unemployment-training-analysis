@@ -56,3 +56,7 @@ Completed tasks, newest last.
 15. **Patterns and interactions**
     - Added `src/analysis/insights.py` for cohort gap, wait to training, one-day results, age×gender sent rates, and training card vs result.
     - Wrote `output/txt/insights.txt`, five figures in `output/png/analysis`, and sections 12–13 in `ANALYSIS.md`. Hooked the step into `main.py`.
+
+16. **Unemployment length vs training**
+    - Added `src/analysis/duration_impact.py`: not sent vs participants, and `lõpetas` vs `katkestas`, using UE length and days from training start to UE end.
+    - Wrote `output/txt/duration_impact.txt` and figures in `output/png/analysis`; filled `ANALYSIS.md` sections 13–14. Hooked into `main.py`.

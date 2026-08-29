@@ -121,3 +121,11 @@ Based on docs/process.md, create docs\commands.md content, task by task, what sh
 ```text
 After completing the preliminary overview and basic exploratory analysis, identify meaningful patterns, relationships, trends, and differences in the data that could provide actionable insights. Focus on exploring interactions between variables, unusual patterns or outliers, and factors that may explain important outcomes or differences between groups or changes over time. Write a separate code file for that if needed and output files. Write a summary to the end of ANALYSIS.md.
 ```
+
+---
+
+## 16. Unemployment length vs training
+
+```text
+Write separate analyses code file, outputs files and add it to ANALYSIS.md - under 13.: compare persons not sent to training and those who participated on training (lõpetas ja katkestas) based on unemployment period length; under 14.: compare lõpetas ja katkestas based on unemployment period length; In both cases use Töötuse algus ja töötuse lõpp and also Koolituse algus ja töötuse lõpp. The goal is to analyse if the training has impact on unemployment period length and end.
+```

@@ -439,9 +439,67 @@ With a card (`jah`, n=1,384): **lõpetas 94.8%**, `katkestas` only 1.1%, but `j�
 
 ---
 
-## 13. Summary of actionable insights
+## 13. Not sent vs participated: unemployment length and end
 
-These points follow from sections 1–12. They are patterns in this extract, not causal effects of training on leaving unemployment.
+**What was done.** People **not sent** (ID only in `töötud.xls`) were compared with people who **participated** (`Koolituse tulemus` is `lõpetas` or `katkestas`). Two clocks:
+
+- **Unemployment length** — `Töötuse lõpp − Töötuse algus` in calendar days, only if the spell has ended
+- **After training start** — `Töötuse lõpp − Koolituse algus` in calendar days (participants with an end date only; not-sent people have no training start)
+
+Share of spells that have an end date is the measure of “unemployment ended” in this extract. Code: `src/analysis/duration_impact.py`. Table: [output/txt/duration_impact.txt](output/txt/duration_impact.txt).
+
+| Group | n | Spell ended | Still open | Median UE days (ended) | Mean UE days | Median days from training start to UE end |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Not sent | 1,067 | **438 (41.0%)** | 629 | **298** | 514 | — (no `Koolituse algus`) |
+| Participated | 3,764 | **1,539 (40.9%)** | 2,225 | **285** | 466 | **91** (n=1,539; 7 ended before training) |
+
+![Share of spells that have ended: not sent vs participated](output/png/analysis/duration_ended_notsent_vs_participated.png)
+
+![Unemployment length, ended spells: not sent vs participated](output/png/analysis/duration_ue_box_notsent_vs_participated.png)
+
+Histogram: [duration_ue_hist_notsent_vs_participated.png](output/png/analysis/duration_ue_hist_notsent_vs_participated.png). Days from training start to end (participants only): [duration_after_train_hist_participated.png](output/png/analysis/duration_after_train_hist_participated.png).
+
+Among **ended** spells the medians are close (298 vs 285 days). The not-sent group has a longer right tail (mean 514, max 2,385, IQR 884 vs IQR 223). The **share that has ended is the same (41%)**. For participants who did leave, the median time from `Koolituse algus` to `Töötuse lõpp` is **91 days**.
+
+Split by unemployment-start cohort (same hole as section 12):
+
+| Cohort | Not sent ended | Participated ended | Median UE days (not sent / participated) |
+| --- | ---: | ---: | ---: |
+| 2017–2021 | 42.2% (n=294) | 38.1% (n=971) | 1,160 / 1,178 |
+| 2024–2025 | 40.6% (n=773) | 41.9% (n=2,793) | 248 / 241 |
+
+**Conclusion.** In this snapshot, **participating in training is not associated with a higher chance that the spell has ended**, and median length among ended spells differs by only about two weeks. The 2024–2025 cohort (most of the sample) is essentially identical. That does **not** show that training shortens unemployment: people who get a course have already waited (median 194 days, section 12), and end dates are still a narrow extract window. A later follow-up file would be needed for a real impact estimate.
+
+---
+
+## 14. `lõpetas` vs `katkestas`: unemployment length and end
+
+**What was done.** The same two clocks as section 13, now only among participants, split by result.
+
+| Group | n | Spell ended | Still open | Median UE days (ended) | Mean UE days | Median days from training start to UE end |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `lõpetas` | 3,645 | **1,465 (40.2%)** | 2,180 | **285** | 464 | **93** (6 ended before training) |
+| `katkestas` | 119 | **74 (62.2%)** | 45 | **280.5** | 520 | **71** (1 ended before training) |
+
+![Share of spells that have ended: lõpetas vs katkestas](output/png/analysis/duration_ended_lopetas_vs_katkestas.png)
+
+![Unemployment length, ended spells: lõpetas vs katkestas](output/png/analysis/duration_ue_box_lopetas_vs_katkestas.png)
+
+![Days from training start to unemployment end: lõpetas vs katkestas](output/png/analysis/duration_after_train_box_lopetas_vs_katkestas.png)
+
+Other figures: [duration_ue_hist_lopetas_vs_katkestas.png](output/png/analysis/duration_ue_hist_lopetas_vs_katkestas.png), [duration_after_train_hist_lopetas_vs_katkestas.png](output/png/analysis/duration_after_train_hist_lopetas_vs_katkestas.png).
+
+People who **interrupt** (`katkestas`) are much more likely to have already left the register (**62.2%** vs **40.2%**). Among those who left, **total** unemployment length is similar (median 285 vs 281 days), but time **after training starts** is shorter for `katkestas` (median **71** vs **93** days). The same gap in *share ended* appears in both cohorts (about 63–64% vs 37–41%).
+
+**Conclusion.** Finishing the course does **not** line up with a shorter spell or a higher exit rate. The opposite pattern is more plausible as **selection**: people who interrupt are often already on the way out (or leave soon after the start date); people who finish are more often still unemployed when the extract is taken. This is not evidence that completing training lengthens unemployment, and not evidence that it shortens it. Sections 12 and 13 already show that `katkestas` is a small group (119 people) and that sent vs not sent have the same 41% exit rate.
+
+Full table: [output/txt/duration_impact.txt](output/txt/duration_impact.txt).
+
+---
+
+## 15. Summary of actionable insights
+
+These points follow from sections 1–14. They are patterns in this extract, not causal effects of training on leaving unemployment.
 
 1. **The register here is two cohorts.** Unemployment starts stop after 2021 and resume in 2024; 2022–2023 are empty. Duration, wait to training, and “long-term unemployed” all inherit that hole. Any trend over time must be split into 2017–2021 vs 2024–2025.
 
@@ -455,7 +513,7 @@ These points follow from sections 1–12. They are patterns in this extract, not
 
 6. **Training card (`jah`) goes with slightly higher completion and lower `katkestas`.** It is a useful flag for later models, not by itself a recommendation to issue more cards.
 
-7. **Do not read closed spells as a training outcome.** Open-spell share is 59% with or without training. End dates are a snapshot artefact. A follow-up file with later exits would be needed to study employment effects.
+7. **Do not read closed spells as a training outcome.** Open-spell share is 59% with or without training (not sent 41.0% ended vs participants 40.9%). Median length among ended spells is 298 vs 285 days. People who interrupt (`katkestas`) leave more often (62.2%) than completers (40.2%) — that looks like selection, not a training effect. End dates are a snapshot artefact. A follow-up file with later exits would be needed to study employment effects.
 
 8. **October 2024 is the volume peak** for starts; late-summer months have a slightly higher dropout rate but still low in absolute terms. Capacity planning should follow October-scale volume, not the 2022–2023 gap (there is no inflow in those years in this file).
 
