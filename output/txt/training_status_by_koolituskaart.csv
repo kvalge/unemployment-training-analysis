@@ -1,0 +1,10 @@
+dimension,group,n_group,status,n,pct_within_group,pct_of_unemployed
+Koolituskaart,(no training),1067,not sent,1067,1.0,0.21357085668534828
+Koolituskaart,(no training),1067,not participated,0,0.0,0.0
+Koolituskaart,(no training),1067,participated,0,0.0,0.0
+Koolituskaart,ei,2545,not sent,0,0.0,0.0
+Koolituskaart,ei,2545,not participated,108,0.04243614931237721,0.021617293835068056
+Koolituskaart,ei,2545,participated,2437,0.9575638506876228,0.4877902321857486
+Koolituskaart,jah,1384,not sent,0,0.0,0.0
+Koolituskaart,jah,1384,not participated,57,0.041184971098265896,0.011409127301841474
+Koolituskaart,jah,1384,participated,1327,0.9588150289017341,0.2656124899919936

@@ -1,0 +1,21 @@
+Faceted training-status charts
+Each panel is one group. Bars are the three statuses (shares of unemployed in that group).
+Y-axis is 0–100% on every panel. Dashed lines are the overall share of all unemployed.
+Panels are sorted by not participated share, highest first.
+
+Overall reference lines (all unemployed):
+  not sent              21.4%
+  not participated       3.3%
+  participated          75.3%
+
+County panel order:
+  Pärnumaa, Tartumaa, Ida-Virumaa, Viljandimaa, Raplamaa, Valgamaa, Võrumaa, Läänemaa, Tallinn ja Harjumaa, Põlvamaa, Hiiumaa, Lääne-Virumaa, Jõgevamaa, Järvamaa, Saaremaa
+
+Sex panel order:
+  mees, naine
+
+Age panel order:
+  25–34, 55+, 15–24, 35–44, 45–54
+
+Within-county figures use the same county order and the same overall reference lines.
+Inside those panels, bars are still the three statuses; clusters are sex or age group.

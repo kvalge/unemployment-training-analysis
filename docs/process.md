@@ -63,3 +63,13 @@ Completed tasks, newest last.
 
 17. **Duration conclusions in the summary**
     - Added section 13 and 14 overall conclusions as items 9–10 in `ANALYSIS.md` section 15.
+
+## 2026-08-30
+
+18. **Three-way training status**
+    - Added `src/analysis/training_status.py`: not sent, not participated (`jäi ära` / `keeldus` / `loobus`), and participated (`lõpetas` / `katkestas`), overall and by county, sex, age, occupation, and training card.
+    - Wrote separate `output/txt/training_status_*.txt` and `.csv` files. Inserted `ANALYSIS.md` section 15; moved the summary to 16 and added insight 11. Hooked into `main.py`.
+
+19. **Faceted training-status charts**
+    - Added `src/analysis/training_status_charts.py`: county, sex, and age small multiples, plus county×sex and county×age, shared 0–100% scale, colours, and overall reference lines. Sorted by not-participated share.
+    - Wrote figures in `output/png/analysis`, notes and cross-tab CSVs in `output/txt`. Inserted `ANALYSIS.md` section 16; moved the summary to 17 and added insight 12.

@@ -1,0 +1,226 @@
+dimension_a,group_a,dimension_b,group_b,n_group,status,n,pct_within_group,pct_of_unemployed
+Maakond,Hiiumaa,age_group,15–24,10,not sent,3,0.3,0.0006004803843074459
+Maakond,Hiiumaa,age_group,15–24,10,not participated,0,0.0,0.0
+Maakond,Hiiumaa,age_group,15–24,10,participated,7,0.7,0.0014011208967173738
+Maakond,Hiiumaa,age_group,25–34,20,not sent,8,0.4,0.0016012810248198558
+Maakond,Hiiumaa,age_group,25–34,20,not participated,0,0.0,0.0
+Maakond,Hiiumaa,age_group,25–34,20,participated,12,0.6,0.0024019215372297837
+Maakond,Hiiumaa,age_group,35–44,15,not sent,4,0.26666666666666666,0.0008006405124099279
+Maakond,Hiiumaa,age_group,35–44,15,not participated,1,0.06666666666666667,0.00020016012810248197
+Maakond,Hiiumaa,age_group,35–44,15,participated,10,0.6666666666666666,0.0020016012810248197
+Maakond,Hiiumaa,age_group,45–54,14,not sent,5,0.35714285714285715,0.0010008006405124099
+Maakond,Hiiumaa,age_group,45–54,14,not participated,0,0.0,0.0
+Maakond,Hiiumaa,age_group,45–54,14,participated,9,0.6428571428571429,0.001801441152922338
+Maakond,Hiiumaa,age_group,55+,7,not sent,5,0.7142857142857143,0.0010008006405124099
+Maakond,Hiiumaa,age_group,55+,7,not participated,0,0.0,0.0
+Maakond,Hiiumaa,age_group,55+,7,participated,2,0.2857142857142857,0.00040032025620496394
+Maakond,Ida-Virumaa,age_group,15–24,64,not sent,17,0.265625,0.0034027221777421937
+Maakond,Ida-Virumaa,age_group,15–24,64,not participated,1,0.015625,0.00020016012810248197
+Maakond,Ida-Virumaa,age_group,15–24,64,participated,46,0.71875,0.009207365892714172
+Maakond,Ida-Virumaa,age_group,25–34,184,not sent,38,0.20652173913043478,0.007606084867894315
+Maakond,Ida-Virumaa,age_group,25–34,184,not participated,13,0.07065217391304347,0.002602081665332266
+Maakond,Ida-Virumaa,age_group,25–34,184,participated,133,0.7228260869565217,0.026621297037630103
+Maakond,Ida-Virumaa,age_group,35–44,210,not sent,48,0.22857142857142856,0.009607686148919135
+Maakond,Ida-Virumaa,age_group,35–44,210,not participated,9,0.04285714285714286,0.001801441152922338
+Maakond,Ida-Virumaa,age_group,35–44,210,participated,153,0.7285714285714285,0.030624499599679743
+Maakond,Ida-Virumaa,age_group,45–54,230,not sent,71,0.30869565217391304,0.01421136909527622
+Maakond,Ida-Virumaa,age_group,45–54,230,not participated,5,0.021739130434782608,0.0010008006405124099
+Maakond,Ida-Virumaa,age_group,45–54,230,participated,154,0.6695652173913044,0.030824659727782224
+Maakond,Ida-Virumaa,age_group,55+,90,not sent,21,0.23333333333333334,0.004203362690152122
+Maakond,Ida-Virumaa,age_group,55+,90,not participated,6,0.06666666666666667,0.0012009607686148918
+Maakond,Ida-Virumaa,age_group,55+,90,participated,63,0.7,0.012610088070456365
+Maakond,Järvamaa,age_group,15–24,27,not sent,5,0.18518518518518517,0.0010008006405124099
+Maakond,Järvamaa,age_group,15–24,27,not participated,0,0.0,0.0
+Maakond,Järvamaa,age_group,15–24,27,participated,22,0.8148148148148148,0.004403522818254604
+Maakond,Järvamaa,age_group,25–34,38,not sent,8,0.21052631578947367,0.0016012810248198558
+Maakond,Järvamaa,age_group,25–34,38,not participated,1,0.02631578947368421,0.00020016012810248197
+Maakond,Järvamaa,age_group,25–34,38,participated,29,0.7631578947368421,0.005804643714971977
+Maakond,Järvamaa,age_group,35–44,45,not sent,9,0.2,0.001801441152922338
+Maakond,Järvamaa,age_group,35–44,45,not participated,0,0.0,0.0
+Maakond,Järvamaa,age_group,35–44,45,participated,36,0.8,0.007205764611689352
+Maakond,Järvamaa,age_group,45–54,29,not sent,2,0.06896551724137931,0.00040032025620496394
+Maakond,Järvamaa,age_group,45–54,29,not participated,1,0.034482758620689655,0.00020016012810248197
+Maakond,Järvamaa,age_group,45–54,29,participated,26,0.896551724137931,0.005204163330664532
+Maakond,Järvamaa,age_group,55+,13,not sent,2,0.15384615384615385,0.00040032025620496394
+Maakond,Järvamaa,age_group,55+,13,not participated,0,0.0,0.0
+Maakond,Järvamaa,age_group,55+,13,participated,11,0.8461538461538461,0.002201761409127302
+Maakond,Jõgevamaa,age_group,15–24,5,not sent,0,0.0,0.0
+Maakond,Jõgevamaa,age_group,15–24,5,not participated,0,0.0,0.0
+Maakond,Jõgevamaa,age_group,15–24,5,participated,5,1.0,0.0010008006405124099
+Maakond,Jõgevamaa,age_group,25–34,8,not sent,3,0.375,0.0006004803843074459
+Maakond,Jõgevamaa,age_group,25–34,8,not participated,0,0.0,0.0
+Maakond,Jõgevamaa,age_group,25–34,8,participated,5,0.625,0.0010008006405124099
+Maakond,Jõgevamaa,age_group,35–44,25,not sent,6,0.24,0.0012009607686148918
+Maakond,Jõgevamaa,age_group,35–44,25,not participated,1,0.04,0.00020016012810248197
+Maakond,Jõgevamaa,age_group,35–44,25,participated,18,0.72,0.003602882305844676
+Maakond,Jõgevamaa,age_group,45–54,26,not sent,4,0.15384615384615385,0.0008006405124099279
+Maakond,Jõgevamaa,age_group,45–54,26,not participated,0,0.0,0.0
+Maakond,Jõgevamaa,age_group,45–54,26,participated,22,0.8461538461538461,0.004403522818254604
+Maakond,Jõgevamaa,age_group,55+,9,not sent,0,0.0,0.0
+Maakond,Jõgevamaa,age_group,55+,9,not participated,0,0.0,0.0
+Maakond,Jõgevamaa,age_group,55+,9,participated,9,1.0,0.001801441152922338
+Maakond,Lääne-Virumaa,age_group,15–24,12,not sent,2,0.16666666666666666,0.00040032025620496394
+Maakond,Lääne-Virumaa,age_group,15–24,12,not participated,1,0.08333333333333333,0.00020016012810248197
+Maakond,Lääne-Virumaa,age_group,15–24,12,participated,9,0.75,0.001801441152922338
+Maakond,Lääne-Virumaa,age_group,25–34,32,not sent,8,0.25,0.0016012810248198558
+Maakond,Lääne-Virumaa,age_group,25–34,32,not participated,1,0.03125,0.00020016012810248197
+Maakond,Lääne-Virumaa,age_group,25–34,32,participated,23,0.71875,0.004603682946357086
+Maakond,Lääne-Virumaa,age_group,35–44,46,not sent,12,0.2608695652173913,0.0024019215372297837
+Maakond,Lääne-Virumaa,age_group,35–44,46,not participated,0,0.0,0.0
+Maakond,Lääne-Virumaa,age_group,35–44,46,participated,34,0.7391304347826086,0.0068054443554843875
+Maakond,Lääne-Virumaa,age_group,45–54,38,not sent,5,0.13157894736842105,0.0010008006405124099
+Maakond,Lääne-Virumaa,age_group,45–54,38,not participated,0,0.0,0.0
+Maakond,Lääne-Virumaa,age_group,45–54,38,participated,33,0.868421052631579,0.006605284227381905
+Maakond,Lääne-Virumaa,age_group,55+,13,not sent,0,0.0,0.0
+Maakond,Lääne-Virumaa,age_group,55+,13,not participated,0,0.0,0.0
+Maakond,Lääne-Virumaa,age_group,55+,13,participated,13,1.0,0.002602081665332266
+Maakond,Läänemaa,age_group,15–24,19,not sent,3,0.15789473684210525,0.0006004803843074459
+Maakond,Läänemaa,age_group,15–24,19,not participated,1,0.05263157894736842,0.00020016012810248197
+Maakond,Läänemaa,age_group,15–24,19,participated,15,0.7894736842105263,0.00300240192153723
+Maakond,Läänemaa,age_group,25–34,43,not sent,7,0.16279069767441862,0.0014011208967173738
+Maakond,Läänemaa,age_group,25–34,43,not participated,1,0.023255813953488372,0.00020016012810248197
+Maakond,Läänemaa,age_group,25–34,43,participated,35,0.813953488372093,0.00700560448358687
+Maakond,Läänemaa,age_group,35–44,53,not sent,17,0.32075471698113206,0.0034027221777421937
+Maakond,Läänemaa,age_group,35–44,53,not participated,0,0.0,0.0
+Maakond,Läänemaa,age_group,35–44,53,participated,36,0.6792452830188679,0.007205764611689352
+Maakond,Läänemaa,age_group,45–54,55,not sent,11,0.2,0.002201761409127302
+Maakond,Läänemaa,age_group,45–54,55,not participated,3,0.05454545454545454,0.0006004803843074459
+Maakond,Läänemaa,age_group,45–54,55,participated,41,0.7454545454545455,0.008206565252201762
+Maakond,Läänemaa,age_group,55+,12,not sent,4,0.3333333333333333,0.0008006405124099279
+Maakond,Läänemaa,age_group,55+,12,not participated,0,0.0,0.0
+Maakond,Läänemaa,age_group,55+,12,participated,8,0.6666666666666666,0.0016012810248198558
+Maakond,Pärnumaa,age_group,15–24,49,not sent,9,0.1836734693877551,0.001801441152922338
+Maakond,Pärnumaa,age_group,15–24,49,not participated,3,0.061224489795918366,0.0006004803843074459
+Maakond,Pärnumaa,age_group,15–24,49,participated,37,0.7551020408163265,0.007405924739791833
+Maakond,Pärnumaa,age_group,25–34,95,not sent,13,0.1368421052631579,0.002602081665332266
+Maakond,Pärnumaa,age_group,25–34,95,not participated,7,0.07368421052631578,0.0014011208967173738
+Maakond,Pärnumaa,age_group,25–34,95,participated,75,0.7894736842105263,0.01501200960768615
+Maakond,Pärnumaa,age_group,35–44,122,not sent,34,0.2786885245901639,0.0068054443554843875
+Maakond,Pärnumaa,age_group,35–44,122,not participated,7,0.05737704918032787,0.0014011208967173738
+Maakond,Pärnumaa,age_group,35–44,122,participated,81,0.6639344262295082,0.01621297037630104
+Maakond,Pärnumaa,age_group,45–54,129,not sent,39,0.3023255813953488,0.007806244995996798
+Maakond,Pärnumaa,age_group,45–54,129,not participated,4,0.031007751937984496,0.0008006405124099279
+Maakond,Pärnumaa,age_group,45–54,129,participated,86,0.6666666666666666,0.01721377101681345
+Maakond,Pärnumaa,age_group,55+,22,not sent,4,0.18181818181818182,0.0008006405124099279
+Maakond,Pärnumaa,age_group,55+,22,not participated,2,0.09090909090909091,0.00040032025620496394
+Maakond,Pärnumaa,age_group,55+,22,participated,16,0.7272727272727273,0.0032025620496397116
+Maakond,Põlvamaa,age_group,15–24,12,not sent,2,0.16666666666666666,0.00040032025620496394
+Maakond,Põlvamaa,age_group,15–24,12,not participated,0,0.0,0.0
+Maakond,Põlvamaa,age_group,15–24,12,participated,10,0.8333333333333334,0.0020016012810248197
+Maakond,Põlvamaa,age_group,25–34,32,not sent,6,0.1875,0.0012009607686148918
+Maakond,Põlvamaa,age_group,25–34,32,not participated,1,0.03125,0.00020016012810248197
+Maakond,Põlvamaa,age_group,25–34,32,participated,25,0.78125,0.0050040032025620495
+Maakond,Põlvamaa,age_group,35–44,38,not sent,5,0.13157894736842105,0.0010008006405124099
+Maakond,Põlvamaa,age_group,35–44,38,not participated,1,0.02631578947368421,0.00020016012810248197
+Maakond,Põlvamaa,age_group,35–44,38,participated,32,0.8421052631578947,0.006405124099279423
+Maakond,Põlvamaa,age_group,45–54,33,not sent,7,0.21212121212121213,0.0014011208967173738
+Maakond,Põlvamaa,age_group,45–54,33,not participated,1,0.030303030303030304,0.00020016012810248197
+Maakond,Põlvamaa,age_group,45–54,33,participated,25,0.7575757575757576,0.0050040032025620495
+Maakond,Põlvamaa,age_group,55+,20,not sent,4,0.2,0.0008006405124099279
+Maakond,Põlvamaa,age_group,55+,20,not participated,0,0.0,0.0
+Maakond,Põlvamaa,age_group,55+,20,participated,16,0.8,0.0032025620496397116
+Maakond,Raplamaa,age_group,15–24,14,not sent,0,0.0,0.0
+Maakond,Raplamaa,age_group,15–24,14,not participated,0,0.0,0.0
+Maakond,Raplamaa,age_group,15–24,14,participated,14,1.0,0.0028022417934347476
+Maakond,Raplamaa,age_group,25–34,43,not sent,13,0.3023255813953488,0.002602081665332266
+Maakond,Raplamaa,age_group,25–34,43,not participated,1,0.023255813953488372,0.00020016012810248197
+Maakond,Raplamaa,age_group,25–34,43,participated,29,0.6744186046511628,0.005804643714971977
+Maakond,Raplamaa,age_group,35–44,60,not sent,8,0.13333333333333333,0.0016012810248198558
+Maakond,Raplamaa,age_group,35–44,60,not participated,1,0.016666666666666666,0.00020016012810248197
+Maakond,Raplamaa,age_group,35–44,60,participated,51,0.85,0.010208166533226582
+Maakond,Raplamaa,age_group,45–54,56,not sent,10,0.17857142857142858,0.0020016012810248197
+Maakond,Raplamaa,age_group,45–54,56,not participated,2,0.03571428571428571,0.00040032025620496394
+Maakond,Raplamaa,age_group,45–54,56,participated,44,0.7857142857142857,0.008807045636509208
+Maakond,Raplamaa,age_group,55+,19,not sent,4,0.21052631578947367,0.0008006405124099279
+Maakond,Raplamaa,age_group,55+,19,not participated,3,0.15789473684210525,0.0006004803843074459
+Maakond,Raplamaa,age_group,55+,19,participated,12,0.631578947368421,0.0024019215372297837
+Maakond,Saaremaa,age_group,15–24,12,not sent,4,0.3333333333333333,0.0008006405124099279
+Maakond,Saaremaa,age_group,15–24,12,not participated,0,0.0,0.0
+Maakond,Saaremaa,age_group,15–24,12,participated,8,0.6666666666666666,0.0016012810248198558
+Maakond,Saaremaa,age_group,25–34,35,not sent,4,0.11428571428571428,0.0008006405124099279
+Maakond,Saaremaa,age_group,25–34,35,not participated,1,0.02857142857142857,0.00020016012810248197
+Maakond,Saaremaa,age_group,25–34,35,participated,30,0.8571428571428571,0.00600480384307446
+Maakond,Saaremaa,age_group,35–44,36,not sent,7,0.19444444444444445,0.0014011208967173738
+Maakond,Saaremaa,age_group,35–44,36,not participated,0,0.0,0.0
+Maakond,Saaremaa,age_group,35–44,36,participated,29,0.8055555555555556,0.005804643714971977
+Maakond,Saaremaa,age_group,45–54,30,not sent,4,0.13333333333333333,0.0008006405124099279
+Maakond,Saaremaa,age_group,45–54,30,not participated,0,0.0,0.0
+Maakond,Saaremaa,age_group,45–54,30,participated,26,0.8666666666666667,0.005204163330664532
+Maakond,Saaremaa,age_group,55+,11,not sent,4,0.36363636363636365,0.0008006405124099279
+Maakond,Saaremaa,age_group,55+,11,not participated,0,0.0,0.0
+Maakond,Saaremaa,age_group,55+,11,participated,7,0.6363636363636364,0.0014011208967173738
+Maakond,Tallinn ja Harjumaa,age_group,15–24,197,not sent,48,0.2436548223350254,0.009607686148919135
+Maakond,Tallinn ja Harjumaa,age_group,15–24,197,not participated,5,0.025380710659898477,0.0010008006405124099
+Maakond,Tallinn ja Harjumaa,age_group,15–24,197,participated,144,0.7309644670050761,0.028823058446757407
+Maakond,Tallinn ja Harjumaa,age_group,25–34,414,not sent,107,0.2584541062801932,0.02141713370696557
+Maakond,Tallinn ja Harjumaa,age_group,25–34,414,not participated,12,0.028985507246376812,0.0024019215372297837
+Maakond,Tallinn ja Harjumaa,age_group,25–34,414,participated,295,0.7125603864734299,0.05904723779023219
+Maakond,Tallinn ja Harjumaa,age_group,35–44,481,not sent,81,0.1683991683991684,0.01621297037630104
+Maakond,Tallinn ja Harjumaa,age_group,35–44,481,not participated,8,0.016632016632016633,0.0016012810248198558
+Maakond,Tallinn ja Harjumaa,age_group,35–44,481,participated,392,0.814968814968815,0.07846277021617294
+Maakond,Tallinn ja Harjumaa,age_group,45–54,524,not sent,106,0.20229007633587787,0.02121697357886309
+Maakond,Tallinn ja Harjumaa,age_group,45–54,524,not participated,15,0.02862595419847328,0.00300240192153723
+Maakond,Tallinn ja Harjumaa,age_group,45–54,524,participated,403,0.7690839694656488,0.08066453162530024
+Maakond,Tallinn ja Harjumaa,age_group,55+,147,not sent,53,0.36054421768707484,0.010608486789431545
+Maakond,Tallinn ja Harjumaa,age_group,55+,147,not participated,1,0.006802721088435374,0.00020016012810248197
+Maakond,Tallinn ja Harjumaa,age_group,55+,147,participated,93,0.6326530612244898,0.018614891913530825
+Maakond,Tartumaa,age_group,15–24,60,not sent,10,0.16666666666666666,0.0020016012810248197
+Maakond,Tartumaa,age_group,15–24,60,not participated,5,0.08333333333333333,0.0010008006405124099
+Maakond,Tartumaa,age_group,15–24,60,participated,45,0.75,0.009007205764611689
+Maakond,Tartumaa,age_group,25–34,119,not sent,10,0.08403361344537816,0.0020016012810248197
+Maakond,Tartumaa,age_group,25–34,119,not participated,7,0.058823529411764705,0.0014011208967173738
+Maakond,Tartumaa,age_group,25–34,119,participated,102,0.8571428571428571,0.020416333066453164
+Maakond,Tartumaa,age_group,35–44,160,not sent,41,0.25625,0.008206565252201762
+Maakond,Tartumaa,age_group,35–44,160,not participated,9,0.05625,0.001801441152922338
+Maakond,Tartumaa,age_group,35–44,160,participated,110,0.6875,0.022017614091273018
+Maakond,Tartumaa,age_group,45–54,186,not sent,35,0.1881720430107527,0.00700560448358687
+Maakond,Tartumaa,age_group,45–54,186,not participated,8,0.043010752688172046,0.0016012810248198558
+Maakond,Tartumaa,age_group,45–54,186,participated,143,0.7688172043010753,0.028622898318654923
+Maakond,Tartumaa,age_group,55+,39,not sent,8,0.20512820512820512,0.0016012810248198558
+Maakond,Tartumaa,age_group,55+,39,not participated,2,0.05128205128205128,0.00040032025620496394
+Maakond,Tartumaa,age_group,55+,39,participated,29,0.7435897435897436,0.005804643714971977
+Maakond,Valgamaa,age_group,15–24,29,not sent,1,0.034482758620689655,0.00020016012810248197
+Maakond,Valgamaa,age_group,15–24,29,not participated,1,0.034482758620689655,0.00020016012810248197
+Maakond,Valgamaa,age_group,15–24,29,participated,27,0.9310344827586207,0.005404323458767014
+Maakond,Valgamaa,age_group,25–34,39,not sent,5,0.1282051282051282,0.0010008006405124099
+Maakond,Valgamaa,age_group,25–34,39,not participated,2,0.05128205128205128,0.00040032025620496394
+Maakond,Valgamaa,age_group,25–34,39,participated,32,0.8205128205128205,0.006405124099279423
+Maakond,Valgamaa,age_group,35–44,39,not sent,1,0.02564102564102564,0.00020016012810248197
+Maakond,Valgamaa,age_group,35–44,39,not participated,1,0.02564102564102564,0.00020016012810248197
+Maakond,Valgamaa,age_group,35–44,39,participated,37,0.9487179487179487,0.007405924739791833
+Maakond,Valgamaa,age_group,45–54,37,not sent,9,0.24324324324324326,0.001801441152922338
+Maakond,Valgamaa,age_group,45–54,37,not participated,0,0.0,0.0
+Maakond,Valgamaa,age_group,45–54,37,participated,28,0.7567567567567568,0.005604483586869495
+Maakond,Valgamaa,age_group,55+,11,not sent,0,0.0,0.0
+Maakond,Valgamaa,age_group,55+,11,not participated,1,0.09090909090909091,0.00020016012810248197
+Maakond,Valgamaa,age_group,55+,11,participated,10,0.9090909090909091,0.0020016012810248197
+Maakond,Viljandimaa,age_group,15–24,18,not sent,7,0.3888888888888889,0.0014011208967173738
+Maakond,Viljandimaa,age_group,15–24,18,not participated,0,0.0,0.0
+Maakond,Viljandimaa,age_group,15–24,18,participated,11,0.6111111111111112,0.002201761409127302
+Maakond,Viljandimaa,age_group,25–34,47,not sent,6,0.1276595744680851,0.0012009607686148918
+Maakond,Viljandimaa,age_group,25–34,47,not participated,3,0.06382978723404255,0.0006004803843074459
+Maakond,Viljandimaa,age_group,25–34,47,participated,38,0.8085106382978723,0.007606084867894315
+Maakond,Viljandimaa,age_group,35–44,53,not sent,7,0.1320754716981132,0.0014011208967173738
+Maakond,Viljandimaa,age_group,35–44,53,not participated,2,0.03773584905660377,0.00040032025620496394
+Maakond,Viljandimaa,age_group,35–44,53,participated,44,0.8301886792452831,0.008807045636509208
+Maakond,Viljandimaa,age_group,45–54,54,not sent,7,0.12962962962962962,0.0014011208967173738
+Maakond,Viljandimaa,age_group,45–54,54,not participated,1,0.018518518518518517,0.00020016012810248197
+Maakond,Viljandimaa,age_group,45–54,54,participated,46,0.8518518518518519,0.009207365892714172
+Maakond,Viljandimaa,age_group,55+,19,not sent,3,0.15789473684210525,0.0006004803843074459
+Maakond,Viljandimaa,age_group,55+,19,not participated,1,0.05263157894736842,0.00020016012810248197
+Maakond,Viljandimaa,age_group,55+,19,participated,15,0.7894736842105263,0.00300240192153723
+Maakond,Võrumaa,age_group,15–24,5,not sent,0,0.0,0.0
+Maakond,Võrumaa,age_group,15–24,5,not participated,0,0.0,0.0
+Maakond,Võrumaa,age_group,15–24,5,participated,5,1.0,0.0010008006405124099
+Maakond,Võrumaa,age_group,25–34,12,not sent,4,0.3333333333333333,0.0008006405124099279
+Maakond,Võrumaa,age_group,25–34,12,not participated,0,0.0,0.0
+Maakond,Võrumaa,age_group,25–34,12,participated,8,0.6666666666666666,0.0016012810248198558
+Maakond,Võrumaa,age_group,35–44,19,not sent,2,0.10526315789473684,0.00040032025620496394
+Maakond,Võrumaa,age_group,35–44,19,not participated,2,0.10526315789473684,0.00040032025620496394
+Maakond,Võrumaa,age_group,35–44,19,participated,15,0.7894736842105263,0.00300240192153723
+Maakond,Võrumaa,age_group,45–54,19,not sent,5,0.2631578947368421,0.0010008006405124099
+Maakond,Võrumaa,age_group,45–54,19,not participated,0,0.0,0.0
+Maakond,Võrumaa,age_group,45–54,19,participated,14,0.7368421052631579,0.0028022417934347476
+Maakond,Võrumaa,age_group,55+,8,not sent,2,0.25,0.00040032025620496394
+Maakond,Võrumaa,age_group,55+,8,not participated,0,0.0,0.0
+Maakond,Võrumaa,age_group,55+,8,participated,6,0.75,0.0012009607686148918

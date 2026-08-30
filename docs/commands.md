@@ -129,3 +129,19 @@ After completing the preliminary overview and basic exploratory analysis, identi
 ```text
 Write separate analyses code file, outputs files and add it to ANALYSIS.md - under 13.: compare persons not sent to training and those who participated on training (lõpetas ja katkestas) based on unemployment period length; under 14.: compare lõpetas ja katkestas based on unemployment period length; In both cases use Töötuse algus ja töötuse lõpp and also Koolituse algus ja töötuse lõpp. The goal is to analyse if the training has impact on unemployment period length and end.
 ```
+
+---
+
+## 18. Three-way training status
+
+```text
+Create a separate script file to compute the distribution of unemployed individuals across three training status categories: not sent to training, not participated (jäi ära, keeldus, loobus), and participants (osales, katkestas). For each category, calculate the count and percentage of all unemployed people, and also break this down by subcategories such as county, sex, age group, koolituse ametiala, koolituskaart, so that for every subcategory combination we can see how the three status categories are distributed. Present the results as summary tables, one for the overall distribution and one for each breakdown dimension, so the output can later be used to build faceted comparison charts across categories. Generate separate output files. Add result to ANALYSIS.md under 15, summary moves to be 16. Update then also Summary of actionable insights.
+```
+
+---
+
+## 19. Faceted training-status charts
+
+```text
+Create a faceted bar chart that shows, for each county, the percentage breakdown of unemployed people across the three training status categories (not sent to training, not participated, participants), so that county panels can be compared side by side. Each panel should represent one county, with bars inside the panel representing the three status categories, using consistent colors for the same category across all panels so patterns can be spotted by eye. Use the same y-axis scale across all panels so percentages are directly comparable between counties, and sort the panels by one of the categories, for example by the percentage of not participated, so that counties with the highest values appear first. Add a horizontal reference line in each panel showing the overall average percentage for that category across all counties, so it is easy to see which counties deviate from the average. Repeat the same faceted structure for sex and age group as additional breakdown dimensions, producing separate figures or an additional facet layer, so the same three status categories can be compared not only across counties but also across demographic subgroups within counties. Update also ANALYSIS.md, write that result under 16 and update Summary of actionable insights, which will be 17.
+```

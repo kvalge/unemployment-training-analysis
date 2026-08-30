@@ -1,0 +1,25 @@
+dimension,group,n_group,status,n,pct_within_group,pct_of_unemployed
+Koolituse ametiala,(no training),1067,not sent,1067,1.0,0.21357085668534828
+Koolituse ametiala,(no training),1067,not participated,0,0.0,0.0
+Koolituse ametiala,(no training),1067,participated,0,0.0,0.0
+Koolituse ametiala,"abilised ja koristajad kontoris, hotellis jms asutuses",97,not sent,0,0.0,0.0
+Koolituse ametiala,"abilised ja koristajad kontoris, hotellis jms asutuses",97,not participated,4,0.041237113402061855,0.0008006405124099279
+Koolituse ametiala,"abilised ja koristajad kontoris, hotellis jms asutuses",97,participated,93,0.9587628865979382,0.018614891913530825
+Koolituse ametiala,elektrikud ja elektrimehaanikud,1183,not sent,0,0.0,0.0
+Koolituse ametiala,elektrikud ja elektrimehaanikud,1183,not participated,47,0.039729501267962805,0.009407526020816653
+Koolituse ametiala,elektrikud ja elektrimehaanikud,1183,participated,1136,0.9602704987320372,0.22738190552441953
+Koolituse ametiala,finants-ja haldusjuhid,656,not sent,0,0.0,0.0
+Koolituse ametiala,finants-ja haldusjuhid,656,not participated,24,0.036585365853658534,0.004803843074459567
+Koolituse ametiala,finants-ja haldusjuhid,656,participated,632,0.9634146341463414,0.1265012009607686
+Koolituse ametiala,keevitajad ja leeklõikajad,51,not sent,0,0.0,0.0
+Koolituse ametiala,keevitajad ja leeklõikajad,51,not participated,2,0.0392156862745098,0.00040032025620496394
+Koolituse ametiala,keevitajad ja leeklõikajad,51,participated,49,0.9607843137254902,0.009807846277021618
+Koolituse ametiala,müüjad ja demonstraatorid,903,not sent,0,0.0,0.0
+Koolituse ametiala,müüjad ja demonstraatorid,903,not participated,32,0.035437430786267994,0.006405124099279423
+Koolituse ametiala,müüjad ja demonstraatorid,903,participated,871,0.964562569213732,0.17433947157726182
+Koolituse ametiala,pagarid,1027,not sent,0,0.0,0.0
+Koolituse ametiala,pagarid,1027,not participated,54,0.05258033106134372,0.010808646917534028
+Koolituse ametiala,pagarid,1027,participated,973,0.9474196689386563,0.19475580464371497
+Koolituse ametiala,raamatupidamine,12,not sent,0,0.0,0.0
+Koolituse ametiala,raamatupidamine,12,not participated,2,0.16666666666666666,0.00040032025620496394
+Koolituse ametiala,raamatupidamine,12,participated,10,0.8333333333333334,0.0020016012810248197

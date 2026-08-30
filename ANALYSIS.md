@@ -497,13 +497,149 @@ Full table: [output/txt/duration_impact.txt](output/txt/duration_impact.txt).
 
 ---
 
-## 15. Summary of actionable insights
+## 15. Training status of unemployed people (not sent / not participated / participated)
 
-These points follow from sections 1–14. They are patterns in this extract, not causal effects of training on leaving unemployment.
+**What was done.** Each unemployed person was put in one of three statuses:
+
+- **Not sent** — `ID` is not in `koolitused.xls`
+- **Not participated** — `Koolituse tulemus` is `jäi ära`, `keeldus`, or `loobus`
+- **Participated** — `Koolituse tulemus` is `lõpetas` (osales in this file) or `katkestas`
+
+Counts and shares use **all 4,996 unemployed IDs**. The same three-way split was then computed by **county (`Maakond`)**, **sex (`Sugu`)**, **age group**, **`Koolituse ametiala`**, and **`Koolituskaart`**. Row percentages are the mix of the three statuses inside each subgroup, so later faceted charts can use the same tables.
+
+`Koolituse ametiala` and `Koolituskaart` exist only for people who were sent. People with no training row are kept as `(no training)` so the unemployed total still adds up.
+
+Code: `src/analysis/training_status.py`. Readable tables and long-form CSVs (one pair per dimension):
+
+- [training_status_overall.txt](output/txt/training_status_overall.txt) / [csv](output/txt/training_status_overall.csv)
+- [training_status_by_county.txt](output/txt/training_status_by_county.txt) / [csv](output/txt/training_status_by_county.csv)
+- [training_status_by_sex.txt](output/txt/training_status_by_sex.txt) / [csv](output/txt/training_status_by_sex.csv)
+- [training_status_by_age.txt](output/txt/training_status_by_age.txt) / [csv](output/txt/training_status_by_age.csv)
+- [training_status_by_ametiala.txt](output/txt/training_status_by_ametiala.txt) / [csv](output/txt/training_status_by_ametiala.csv)
+- [training_status_by_koolituskaart.txt](output/txt/training_status_by_koolituskaart.txt) / [csv](output/txt/training_status_by_koolituskaart.csv)
+
+### Overall
+
+| Status | n | Share of unemployed |
+| --- | ---: | ---: |
+| Not sent | 1,067 | **21.4%** |
+| Not participated | 165 | **3.3%** |
+| Participated | 3,764 | **75.3%** |
+
+Inside not participated: `loobus` 129 (78.2% of that group; 2.6% of all unemployed), `jäi ära` 26 (0.5%), `keeldus` 10 (0.2%). Inside participated: `lõpetas` 3,645 (73.0% of unemployed) and `katkestas` 119 (2.4%).
+
+**Three in four** unemployed people took part. The leftover is almost all **not sent**, not people who were offered a course and then stayed out.
+
+### County
+
+| County | n | Not sent | Not participated | Participated |
+| --- | ---: | ---: | ---: | ---: |
+| Valgamaa | 155 | 10.3% | 3.2% | **86.5%** |
+| Järvamaa | 152 | 17.1% | 1.3% | 81.6% |
+| Tallinn ja Harjumaa | 1,763 | 22.4% | 2.3% | 75.3% |
+| Tartumaa | 564 | 18.4% | **5.5%** | 76.1% |
+| Pärnumaa | 417 | 23.7% | **5.5%** | 70.7% |
+| Ida-Virumaa | 778 | 25.1% | 4.4% | 70.6% |
+| Hiiumaa | 66 | **37.9%** | 1.5% | **60.6%** |
+
+The spread in **participated** is about 26 points (Valgamaa vs Hiiumaa) and is driven by **not sent**, not by non-participation. Tartumaa and Pärnumaa have the highest non-participation among counties with volume (5.5%). Full county table: [training_status_by_county.txt](output/txt/training_status_by_county.txt).
+
+### Sex
+
+| Sex | n | Not sent | Not participated | Participated |
+| --- | ---: | ---: | ---: | ---: |
+| mees | 2,593 | 21.2% | **4.2%** | 74.5% |
+| naine | 2,403 | 21.5% | 2.3% | **76.2%** |
+
+Not-sent shares are the same. Men are more often in the non-start group (`loobus` / `jäi ära` / `keeldus`); women are slightly more often among those who actually take part.
+
+### Age group
+
+| Age | n | Not sent | Not participated | Participated |
+| --- | ---: | ---: | ---: | ---: |
+| 15–24 | 533 | 20.8% | 3.2% | 76.0% |
+| 25–34 | 1,161 | 20.7% | 4.3% | 75.0% |
+| 35–44 | 1,402 | 20.1% | 3.0% | **76.9%** |
+| 45–54 | 1,460 | 21.9% | 2.7% | 75.3% |
+| 55+ | 440 | **25.9%** | 3.6% | **70.5%** |
+
+Ages 15–54 sit near 75–77% participated. **55+** is lower because more people are **not sent** (25.9%), not because they refuse or cancel more often.
+
+### Occupation (`Koolituse ametiala`)
+
+These rows are people who were sent to that occupation, so **not sent is 0**. `(no training)` is the 1,067 people with no training row.
+
+| Occupation | n | Not participated | Participated |
+| --- | ---: | ---: | ---: |
+| elektrikud ja elektrimehaanikud | 1,183 | 4.0% | 96.0% |
+| pagarid | 1,027 | **5.3%** | 94.7% |
+| müüjad ja demonstraatorid | 903 | 3.5% | 96.5% |
+| finants-ja haldusjuhid | 656 | 3.7% | 96.3% |
+| abilised ja koristajad… | 97 | 4.1% | 95.9% |
+| keevitajad ja leeklõikajad | 51 | 3.9% | 96.1% |
+| raamatupidamine | 12 | 16.7% | 83.3% |
+
+Among people who have an occupation assigned, **about 95–96% participate**. Bakers have the most non-starts in count (54). Accounting is 2 of 12 — too small to treat as a programme failure.
+
+### Training card (`Koolituskaart`)
+
+| Card | n | Not participated | Participated |
+| --- | --- | ---: | ---: |
+| `(no training)` | 1,067 | 0.0% | 0.0% (all not sent) |
+| ei | 2,545 | 4.2% | 95.8% |
+| jah | 1,384 | 4.1% | 95.9% |
+
+Once someone is sent, **card vs no card does not change the take-up rate**. The card split is about who gets a course, not about who then starts it.
+
+**Conclusion.** The unemployed population is **75.3% participated, 21.4% not sent, 3.3% not participated**. Access (being sent) is the large gap; non-start after a referral is a small slice and is mostly `loobus`. County and age 55+ move the **not-sent** share; sex moves **non-participation** (men higher). Occupation and training card barely move participation among those already sent. Section 16 draws the same three statuses as faceted charts.
+
+---
+
+## 16. Faceted comparison of the three training statuses
+
+**What was done.** The section 15 tables were drawn as **small-multiple bar charts**. Each panel is one group. The three bars inside a panel are **not sent**, **not participated**, and **participated**. Colour is fixed across every panel (not sent `#9cd8da`, not participated `#c47c5c`, participated `#4ba7a2`). The y-axis is **0–100%** on every panel. Panels are **sorted by not-participated share**, highest first. Dashed lines in each panel are the **overall shares of all unemployed**: not sent **21.4%**, not participated **3.3%**, participated **75.3%**.
+
+The same structure was used for **county**, **sex**, and **age**. Two further figures keep county as the panel and put **sex** or **age** as bar clusters inside the panel, so the three statuses can be compared across demographics *within* counties.
+
+Code: `src/analysis/training_status_charts.py`. Notes: [output/txt/training_status_facets.txt](output/txt/training_status_facets.txt). Cross-tab CSVs: [training_status_by_county_sex.csv](output/txt/training_status_by_county_sex.csv), [training_status_by_county_age.csv](output/txt/training_status_by_county_age.csv).
+
+### County
+
+![Training status by county](output/png/analysis/training_status_facet_county.png)
+
+County order (not participated, high to low): Pärnumaa and Tartumaa **5.5%**, then Ida-Virumaa 4.4%, down to Saaremaa **0.8%**. The brown bar stays small everywhere; the eye is pulled by the **not-sent** bar instead. **Hiiumaa** sits well above the 21.4% not-sent line (37.9%) and well below the 75.3% participated line (60.6%). **Valgamaa** is the opposite (10.3% not sent, 86.5% participated) even though it is mid-pack on non-participation (3.2%). Large counties (Tallinn ja Harjumaa, Ida-Virumaa) hug the overall lines.
+
+### Sex
+
+![Training status by sex](output/png/analysis/training_status_facet_sex.png)
+
+**Not sent** is on the overall line for both sexes (21.2% men, 21.5% women). **Not participated** is the split: men **4.2%** (above the 3.3% line), women **2.3%** (below it). Participated is the mirror of that (74.5% vs 76.2%).
+
+### Age group
+
+![Training status by age group](output/png/analysis/training_status_facet_age.png)
+
+Sorted by non-participation, **25–34** is first (4.3%) and **45–54** last (2.7%). The panel that stands off the reference lines is **55+**: not sent **25.9%**, participated **70.5%**. Other ages sit on the overall mix.
+
+### Demographics within counties
+
+![Training status by county and sex](output/png/analysis/training_status_facet_county_sex.png)
+
+The male non-start gap is not only a national average. **Pärnumaa men** are **8.3%** not participated (19 of 229) vs **2.1%** of Pärnumaa women (4 of 188). Tartumaa men 6.2%, Ida-Virumaa men 5.2%. Hiiumaa’s high not-sent share is both sexes (36% men, 39% women).
+
+Age within county: [training_status_facet_county_age.png](output/png/analysis/training_status_facet_county_age.png). Small counties have thin age cells (Hiiumaa n=66), so those bars move a lot. In larger counties the 55+ not-sent lift is visible but not a different story from the national age figure.
+
+**Conclusion.** Side-by-side panels confirm section 15 by eye: **participation dominates every county**; **non-participation is a thin bar** that only Pärnumaa, Tartumaa, and some **men in those counties** push above the 3.3% line; **access (not sent)** is what really sorts places, with Hiiumaa high and Valgamaa low. Sex does not sort access; age 55+ does. Use the same colours and the same 0–100% scale when comparing any of these figures.
+
+---
+
+## 17. Summary of actionable insights
+
+These points follow from sections 1–16. They are patterns in this extract, not causal effects of training on leaving unemployment.
 
 1. **The register here is two cohorts.** Unemployment starts stop after 2021 and resume in 2024; 2022–2023 are empty. Duration, wait to training, and “long-term unemployed” all inherit that hole. Any trend over time must be split into 2017–2021 vs 2024–2025.
 
-2. **Most people who are offered a course take it (95.8%) and finish it (96.8% of participants).** The scarce event is *not being sent* (21.4% of unemployed), not dropout. Targeting should focus on **who is left out**, not on a large dropout problem.
+2. **Most people who are offered a course take it (95.8%) and finish it (96.8% of participants).** Among all unemployed the three-way split is **75.3% participated, 21.4% not sent, 3.3% not participated** (section 15). The scarce event is *not being sent*, not refusal or dropout. Targeting should focus on **who is left out**, not on a large non-start problem.
 
 3. **The group left out is not “men vs women” in general.** Sent rates are flat by sex until **women aged 55+ (68.8% vs 78.9% for men 55+)**. That is the main demographic interaction worth a programme check (referral rules, health, occupation mix).
 
@@ -521,10 +657,14 @@ These points follow from sections 1–14. They are patterns in this extract, not
 
 10. **Finishing the course does not line up with leaving unemployment; interrupting does — and that is selection, not impact** (section 14). `lõpetas` **40.2%** ended vs `katkestas` **62.2%**. Total length among those who left is similar (median 285 vs 281 days); time after training start is shorter for `katkestas` (median 71 vs 93 days). Completers are more often still unemployed when the extract is taken. `katkestas` is only 119 people. Do not treat completion as a re-employment success metric in this file.
 
-Full numbers: [output/txt/insights.txt](output/txt/insights.txt), [output/txt/duration_impact.txt](output/txt/duration_impact.txt). Figures: [output/png/analysis](output/png/analysis).
+11. **Split the register into three statuses, not two** (section 15). Binary “sent vs not sent” hides that almost everyone who is sent also takes part. Non-participation is **165 people (3.3%)**, mostly `loobus`. County and age 55+ change **who is sent**; men have a higher non-start rate than women (4.2% vs 2.3%). Occupation and `Koolituskaart` do not change take-up among those already sent (~96%).
+
+12. **The faceted charts make the same split readable by eye** (section 16). Every county panel is dominated by participated; the brown not-participated bar stays small except Pärnumaa and Tartumaa (both 5.5%, and Pärnumaa *men* 8.3%). Hiiumaa is the access outlier (37.9% not sent). Men sit above the 3.3% non-start line, women below it; 55+ sits above the 21.4% not-sent line. Compare panels on the shared 0–100% scale and the dashed overall lines, not on raw counts.
+
+Full numbers: [output/txt/insights.txt](output/txt/insights.txt), [output/txt/duration_impact.txt](output/txt/duration_impact.txt), [output/txt/training_status_overall.txt](output/txt/training_status_overall.txt), [output/txt/training_status_facets.txt](output/txt/training_status_facets.txt). Figures: [output/png/analysis](output/png/analysis).
 
 
-## Analysis done by Codex
+# Analysis done by Codex
 Key Insights
 1. Training participation is very high: 3,929 of 4,996 unemployed people appear in the training table, about 78.6%.
 2. Training does not strongly separate unemployment closure rates overall: trained people had a 41.0% unemployment-ended rate, almost identical to untrained people at 41.0%.
@@ -546,7 +686,7 @@ Key Insights
 Important caveat: these are descriptive patterns, not causal effects. Since training often starts months after unemployment begins, the raw comparison between trained and untrained groups is likely affected by selection and timing.
 
 
-## Analysis done by Claude AI
+# Analysis done by Claude AI
 1. A sharp, gap-filled surge in registrations, then a male-heavy pivot. New unemployment registrations jump from a trickle in 2020–2021 to 800–1,100 people/quarter from late 2021 and 2024 (there's a data gap for 2022–2023 — no records at all, so treat the line as two separate episodes, not a smooth trend). Within the 2024–2025 wave, the gender mix flips hard: men were a minority of new registrants in Q1–Q2 2024 (44–46%), then swung to 64% in Q3, 70% in Q4, and 73% by Q1 2025. This lines up with the training data — from Q3 2024 on, registrations in male-coded fields (electricians/electromechanics, welders) rise sharply relative to the female-coded ones (bakers, sales/demonstrators), suggesting a wave of layoffs concentrated in industrial/technical occupations hit later in 2024.
 
 2. Finishing the training predicts staying unemployed, not finding a job. This is the most counterintuitive pattern in the data:
@@ -566,3 +706,6 @@ County: huge spread — Võrumaa leads at 63% re-employed (and the shortest aver
 4. Training itself runs smoothly — 93% completion overall — with little variation by gender or age, but a real gap by field: accounting (raamatupidamine, a tiny group of 12) completes at only 83%, welders at 88%, versus 94%+ for electricians, sales staff, and office/hotel support roles.
 
 5. The "koolituskaart" (training card) is a brand-new instrument. It's essentially unused through Q3 2024 (0–3% of trainees), then suddenly covers 44% of trainees in Q4 2024 and 56% in Q1 2025 — a clean signature of a policy or program change introduced in late 2024, worth checking against known Töötukassa policy timelines.
+
+
+## 

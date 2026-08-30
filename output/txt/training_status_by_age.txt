@@ -1,0 +1,16 @@
+Training status of unemployed people
+Denominator: all IDs in töötud.xls
+not sent          = ID is not in koolitused.xls
+not participated  = Koolituse tulemus in {jäi ära, keeldus, loobus}
+participated      = Koolituse tulemus in {lõpetas, katkestas}
+                   (osales in this file is lõpetas; katkestas is included)
+Row % is the share of that subgroup in each of the three statuses.
+
+BY AGE GROUP
+
+group                                                     n  not sent       % not part.       % particip.       %
+15–24                                                   533       111   20.8%        17    3.2%       405   76.0%
+25–34                                                 1,161       240   20.7%        50    4.3%       871   75.0%
+35–44                                                 1,402       282   20.1%        42    3.0%     1,078   76.9%
+45–54                                                 1,460       320   21.9%        40    2.7%     1,100   75.3%
+55+                                                     440       114   25.9%        16    3.6%       310   70.5%

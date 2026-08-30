@@ -1,0 +1,4 @@
+dimension,group,n_group,status,n,pct_within_group,pct_of_unemployed
+overall,all unemployed,4996,not sent,1067,0.21357085668534828,0.21357085668534828
+overall,all unemployed,4996,not participated,165,0.033026421136909526,0.033026421136909526
+overall,all unemployed,4996,participated,3764,0.7534027221777422,0.7534027221777422

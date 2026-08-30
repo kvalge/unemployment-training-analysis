@@ -1,0 +1,91 @@
+dimension_a,group_a,dimension_b,group_b,n_group,status,n,pct_within_group,pct_of_unemployed
+Maakond,Hiiumaa,Sugu,mees,22,not sent,8,0.36363636363636365,0.0016012810248198558
+Maakond,Hiiumaa,Sugu,mees,22,not participated,0,0.0,0.0
+Maakond,Hiiumaa,Sugu,mees,22,participated,14,0.6363636363636364,0.0028022417934347476
+Maakond,Hiiumaa,Sugu,naine,44,not sent,17,0.38636363636363635,0.0034027221777421937
+Maakond,Hiiumaa,Sugu,naine,44,not participated,1,0.022727272727272728,0.00020016012810248197
+Maakond,Hiiumaa,Sugu,naine,44,participated,26,0.5909090909090909,0.005204163330664532
+Maakond,Ida-Virumaa,Sugu,mees,461,not sent,114,0.2472885032537961,0.022818254603682947
+Maakond,Ida-Virumaa,Sugu,mees,461,not participated,24,0.052060737527114966,0.004803843074459567
+Maakond,Ida-Virumaa,Sugu,mees,461,participated,323,0.7006507592190889,0.06465172137710168
+Maakond,Ida-Virumaa,Sugu,naine,317,not sent,81,0.2555205047318612,0.01621297037630104
+Maakond,Ida-Virumaa,Sugu,naine,317,not participated,10,0.031545741324921134,0.0020016012810248197
+Maakond,Ida-Virumaa,Sugu,naine,317,participated,226,0.7129337539432177,0.04523618895116093
+Maakond,Järvamaa,Sugu,mees,79,not sent,13,0.16455696202531644,0.002602081665332266
+Maakond,Järvamaa,Sugu,mees,79,not participated,1,0.012658227848101266,0.00020016012810248197
+Maakond,Järvamaa,Sugu,mees,79,participated,65,0.8227848101265823,0.01301040832666133
+Maakond,Järvamaa,Sugu,naine,73,not sent,13,0.1780821917808219,0.002602081665332266
+Maakond,Järvamaa,Sugu,naine,73,not participated,1,0.0136986301369863,0.00020016012810248197
+Maakond,Järvamaa,Sugu,naine,73,participated,59,0.8082191780821918,0.011809447558046438
+Maakond,Jõgevamaa,Sugu,mees,32,not sent,3,0.09375,0.0006004803843074459
+Maakond,Jõgevamaa,Sugu,mees,32,not participated,1,0.03125,0.00020016012810248197
+Maakond,Jõgevamaa,Sugu,mees,32,participated,28,0.875,0.005604483586869495
+Maakond,Jõgevamaa,Sugu,naine,41,not sent,10,0.24390243902439024,0.0020016012810248197
+Maakond,Jõgevamaa,Sugu,naine,41,not participated,0,0.0,0.0
+Maakond,Jõgevamaa,Sugu,naine,41,participated,31,0.7560975609756098,0.006204963971176942
+Maakond,Lääne-Virumaa,Sugu,mees,69,not sent,10,0.14492753623188406,0.0020016012810248197
+Maakond,Lääne-Virumaa,Sugu,mees,69,not participated,0,0.0,0.0
+Maakond,Lääne-Virumaa,Sugu,mees,69,participated,59,0.855072463768116,0.011809447558046438
+Maakond,Lääne-Virumaa,Sugu,naine,72,not sent,17,0.2361111111111111,0.0034027221777421937
+Maakond,Lääne-Virumaa,Sugu,naine,72,not participated,2,0.027777777777777776,0.00040032025620496394
+Maakond,Lääne-Virumaa,Sugu,naine,72,participated,53,0.7361111111111112,0.010608486789431545
+Maakond,Läänemaa,Sugu,mees,100,not sent,27,0.27,0.005404323458767014
+Maakond,Läänemaa,Sugu,mees,100,not participated,3,0.03,0.0006004803843074459
+Maakond,Läänemaa,Sugu,mees,100,participated,70,0.7,0.01401120896717374
+Maakond,Läänemaa,Sugu,naine,82,not sent,15,0.18292682926829268,0.00300240192153723
+Maakond,Läänemaa,Sugu,naine,82,not participated,2,0.024390243902439025,0.00040032025620496394
+Maakond,Läänemaa,Sugu,naine,82,participated,65,0.7926829268292683,0.01301040832666133
+Maakond,Pärnumaa,Sugu,mees,229,not sent,53,0.2314410480349345,0.010608486789431545
+Maakond,Pärnumaa,Sugu,mees,229,not participated,19,0.08296943231441048,0.0038030424339471577
+Maakond,Pärnumaa,Sugu,mees,229,participated,157,0.6855895196506551,0.031425140112089675
+Maakond,Pärnumaa,Sugu,naine,188,not sent,46,0.24468085106382978,0.009207365892714172
+Maakond,Pärnumaa,Sugu,naine,188,not participated,4,0.02127659574468085,0.0008006405124099279
+Maakond,Pärnumaa,Sugu,naine,188,participated,138,0.7340425531914894,0.027622097678142513
+Maakond,Põlvamaa,Sugu,mees,66,not sent,14,0.21212121212121213,0.0028022417934347476
+Maakond,Põlvamaa,Sugu,mees,66,not participated,2,0.030303030303030304,0.00040032025620496394
+Maakond,Põlvamaa,Sugu,mees,66,participated,50,0.7575757575757576,0.010008006405124099
+Maakond,Põlvamaa,Sugu,naine,69,not sent,10,0.14492753623188406,0.0020016012810248197
+Maakond,Põlvamaa,Sugu,naine,69,not participated,1,0.014492753623188406,0.00020016012810248197
+Maakond,Põlvamaa,Sugu,naine,69,participated,58,0.8405797101449275,0.011609287429943955
+Maakond,Raplamaa,Sugu,mees,100,not sent,14,0.14,0.0028022417934347476
+Maakond,Raplamaa,Sugu,mees,100,not participated,5,0.05,0.0010008006405124099
+Maakond,Raplamaa,Sugu,mees,100,participated,81,0.81,0.01621297037630104
+Maakond,Raplamaa,Sugu,naine,92,not sent,21,0.22826086956521738,0.004203362690152122
+Maakond,Raplamaa,Sugu,naine,92,not participated,2,0.021739130434782608,0.00040032025620496394
+Maakond,Raplamaa,Sugu,naine,92,participated,69,0.75,0.013811048839071256
+Maakond,Saaremaa,Sugu,mees,64,not sent,11,0.171875,0.002201761409127302
+Maakond,Saaremaa,Sugu,mees,64,not participated,1,0.015625,0.00020016012810248197
+Maakond,Saaremaa,Sugu,mees,64,participated,52,0.8125,0.010408326661329063
+Maakond,Saaremaa,Sugu,naine,60,not sent,12,0.2,0.0024019215372297837
+Maakond,Saaremaa,Sugu,naine,60,not participated,0,0.0,0.0
+Maakond,Saaremaa,Sugu,naine,60,participated,48,0.8,0.009607686148919135
+Maakond,Tallinn ja Harjumaa,Sugu,mees,861,not sent,202,0.2346109175377468,0.04043234587670136
+Maakond,Tallinn ja Harjumaa,Sugu,mees,861,not participated,28,0.032520325203252036,0.005604483586869495
+Maakond,Tallinn ja Harjumaa,Sugu,mees,861,participated,631,0.7328687572590011,0.12630104083266613
+Maakond,Tallinn ja Harjumaa,Sugu,naine,902,not sent,193,0.2139689578713969,0.03863090472377902
+Maakond,Tallinn ja Harjumaa,Sugu,naine,902,not participated,13,0.014412416851441241,0.002602081665332266
+Maakond,Tallinn ja Harjumaa,Sugu,naine,902,participated,696,0.7716186252771619,0.13931144915932747
+Maakond,Tartumaa,Sugu,mees,290,not sent,53,0.18275862068965518,0.010608486789431545
+Maakond,Tartumaa,Sugu,mees,290,not participated,18,0.06206896551724138,0.003602882305844676
+Maakond,Tartumaa,Sugu,mees,290,participated,219,0.7551724137931034,0.04383506805444355
+Maakond,Tartumaa,Sugu,naine,274,not sent,51,0.18613138686131386,0.010208166533226582
+Maakond,Tartumaa,Sugu,naine,274,not participated,13,0.04744525547445255,0.002602081665332266
+Maakond,Tartumaa,Sugu,naine,274,participated,210,0.7664233576642335,0.042033626901521216
+Maakond,Valgamaa,Sugu,mees,73,not sent,8,0.1095890410958904,0.0016012810248198558
+Maakond,Valgamaa,Sugu,mees,73,not participated,2,0.0273972602739726,0.00040032025620496394
+Maakond,Valgamaa,Sugu,mees,73,participated,63,0.863013698630137,0.012610088070456365
+Maakond,Valgamaa,Sugu,naine,82,not sent,8,0.0975609756097561,0.0016012810248198558
+Maakond,Valgamaa,Sugu,naine,82,not participated,3,0.036585365853658534,0.0006004803843074459
+Maakond,Valgamaa,Sugu,naine,82,participated,71,0.8658536585365854,0.01421136909527622
+Maakond,Viljandimaa,Sugu,mees,107,not sent,11,0.102803738317757,0.002201761409127302
+Maakond,Viljandimaa,Sugu,mees,107,not participated,3,0.028037383177570093,0.0006004803843074459
+Maakond,Viljandimaa,Sugu,mees,107,participated,93,0.8691588785046729,0.018614891913530825
+Maakond,Viljandimaa,Sugu,naine,84,not sent,19,0.2261904761904762,0.0038030424339471577
+Maakond,Viljandimaa,Sugu,naine,84,not participated,4,0.047619047619047616,0.0008006405124099279
+Maakond,Viljandimaa,Sugu,naine,84,participated,61,0.7261904761904762,0.0122097678142514
+Maakond,Võrumaa,Sugu,mees,40,not sent,10,0.25,0.0020016012810248197
+Maakond,Võrumaa,Sugu,mees,40,not participated,2,0.05,0.00040032025620496394
+Maakond,Võrumaa,Sugu,mees,40,participated,28,0.7,0.005604483586869495
+Maakond,Võrumaa,Sugu,naine,23,not sent,3,0.13043478260869565,0.0006004803843074459
+Maakond,Võrumaa,Sugu,naine,23,not participated,0,0.0,0.0
+Maakond,Võrumaa,Sugu,naine,23,participated,20,0.8695652173913043,0.0040032025620496394
