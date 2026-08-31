@@ -1,0 +1,15 @@
+Training status by age group and sex
+Denominator: unemployed people in that age × sex cell.
+Age-group panels in the figure are sorted by not-sent share, highest first.
+
+age      sex           n  not sent       % not part.       % particip.       %
+55+      mees        232        49   21.1%         8    3.4%       175   75.4%
+55+      naine       208        65   31.2%         8    3.8%       135   64.9%
+45–54    mees        703       165   23.5%        29    4.1%       509   72.4%
+45–54    naine       757       155   20.5%        11    1.5%       591   78.1%
+15–24    mees        322        69   21.4%        10    3.1%       243   75.5%
+15–24    naine       211        42   19.9%         7    3.3%       162   76.8%
+25–34    mees        611       127   20.8%        32    5.2%       452   74.0%
+25–34    naine       550       113   20.5%        18    3.3%       419   76.2%
+35–44    mees        725       141   19.4%        30    4.1%       554   76.4%
+35–44    naine       677       141   20.8%        12    1.8%       524   77.4%

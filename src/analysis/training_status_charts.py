@@ -41,8 +41,8 @@ STATUS_TICKS = {
     STATUS_NOT_PARTICIPATED: "Not part.",
     STATUS_PARTICIPATED: "Particip.",
 }
-SORT_STATUS = STATUS_NOT_PARTICIPATED
-SORT_COL = "pct_not_participated"
+SORT_STATUS = STATUS_NOT_SENT
+SORT_COL = "pct_not_sent"
 
 plt.rcParams.update(
     {
@@ -167,29 +167,33 @@ def plot_status_facets(
 
 def plot_cross_facets(
     long_df: pd.DataFrame,
-    county_order: list[str],
+    panel_order: list[str],
     inner_order: list[str],
     overall_pct: dict[str, float],
     title: str,
     filename: str,
+    ncols: int = 3,
+    figsize: tuple[float, float] | None = None,
 ) -> Path:
-    """County panels; inside each panel, grouped bars by a demographic."""
+    """One panel per group_a value; inside each panel, grouped bars by group_b."""
     PNG_DIR.mkdir(parents=True, exist_ok=True)
-    n_panels = len(county_order)
-    ncols = 3
+    n_panels = len(panel_order)
+    ncols = min(ncols, n_panels)
     nrows = ceil(n_panels / ncols)
-    fig, axes = plt.subplots(nrows, ncols, figsize=(13.2, 2.55 * nrows + 1.2), sharey=True)
-    axes_list = list(axes.ravel())
+    if figsize is None:
+        figsize = (13.2, 2.55 * nrows + 1.2)
+    fig, axes = plt.subplots(nrows, ncols, figsize=figsize, sharey=True)
+    axes_list = [axes] if n_panels == 1 else list(axes.ravel())
     colors = [STATUS_COLORS[s] for s in STATUS_ORDER]
     n_inner = len(inner_order)
     n_status = len(STATUS_ORDER)
     cluster_w = 0.82
     bar_w = cluster_w / n_status
 
-    for i, county in enumerate(county_order):
+    for i, panel in enumerate(panel_order):
         ax = axes_list[i]
-        sub = long_df.loc[long_df["group_a"].astype(str) == county]
-        n_county = int(sub.groupby("group_b", observed=True)["n_group"].first().sum())
+        sub = long_df.loc[long_df["group_a"].astype(str) == panel]
+        n_panel = int(sub.groupby("group_b", observed=True)["n_group"].first().sum())
         for j, inner in enumerate(inner_order):
             cell = sub.loc[sub["group_b"].astype(str) == str(inner)]
             n_cell = int(cell["n_group"].iloc[0]) if not cell.empty else 0
@@ -203,7 +207,7 @@ def plot_cross_facets(
         _style_panel(ax, overall_pct)
         ax.set_xticks(range(n_inner))
         ax.set_xticklabels([str(v) for v in inner_order], fontsize=7, rotation=25, ha="right")
-        ax.set_title(f"{county}  (n={n_county:,})", fontsize=8.5)
+        ax.set_title(f"{panel}  (n={n_panel:,})", fontsize=8.5)
 
     _hide_extra(axes_list, n_panels)
     fig.suptitle(title, fontsize=12, y=1.01)
@@ -252,6 +256,7 @@ def write_facet_notes(
         "",
         "Within-county figures use the same county order and the same overall reference lines.",
         "Inside those panels, bars are still the three statuses; clusters are sex or age group.",
+        "Age × sex figure: age-group panels sorted by not-sent share; clusters inside are sex.",
     ]
     path = TXT_DIR / "training_status_facets.txt"
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -283,7 +288,7 @@ def run_training_status_charts(
         "county": plot_status_facets(
             by_county,
             overall_pct,
-            "Training status by county  ·  panels sorted by not participated",
+            "Training status by county  ·  panels sorted by not sent",
             "training_status_facet_county.png",
             ncols=3,
             figsize=(11.5, 14.2),
@@ -291,7 +296,7 @@ def run_training_status_charts(
         "sex": plot_status_facets(
             by_sex,
             overall_pct,
-            "Training status by sex  ·  panels sorted by not participated",
+            "Training status by sex  ·  panels sorted by not sent",
             "training_status_facet_sex.png",
             ncols=2,
             figsize=(8.4, 4.6),
@@ -299,7 +304,7 @@ def run_training_status_charts(
         "age": plot_status_facets(
             by_age,
             overall_pct,
-            "Training status by age group  ·  panels sorted by not participated",
+            "Training status by age group  ·  panels sorted by not sent",
             "training_status_facet_age.png",
             ncols=5,
             figsize=(13.8, 4.8),
@@ -309,7 +314,7 @@ def run_training_status_charts(
             county_order,
             ["mees", "naine"],
             overall_pct,
-            "Training status by county and sex  ·  counties sorted by not participated",
+            "Training status by county and sex  ·  counties sorted by not sent",
             "training_status_facet_county_sex.png",
         ),
         "county_age": plot_cross_facets(
@@ -317,7 +322,7 @@ def run_training_status_charts(
             county_order,
             list(AGE_LABELS),
             overall_pct,
-            "Training status by county and age  ·  counties sorted by not participated",
+            "Training status by county and age  ·  counties sorted by not sent",
             "training_status_facet_county_age.png",
         ),
     }

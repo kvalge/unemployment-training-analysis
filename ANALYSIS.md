@@ -597,39 +597,47 @@ Once someone is sent, **card vs no card does not change the take-up rate**. The 
 
 ## 16. Faceted comparison of the three training statuses
 
-**What was done.** The section 15 tables were drawn as **small-multiple bar charts**. Each panel is one group. The three bars inside a panel are **not sent**, **not participated**, and **participated**. Colour is fixed across every panel (not sent `#9cd8da`, not participated `#c47c5c`, participated `#4ba7a2`). The y-axis is **0–100%** on every panel. Panels are **sorted by not-participated share**, highest first. Dashed lines in each panel are the **overall shares of all unemployed**: not sent **21.4%**, not participated **3.3%**, participated **75.3%**.
+**What was done.** The section 15 tables were drawn as **small-multiple bar charts**. Each panel is one group. The three bars inside a panel are **not sent**, **not participated**, and **participated**. Colour is fixed across every panel (not sent `#9cd8da`, not participated `#c47c5c`, participated `#4ba7a2`). The y-axis is **0–100%** on every panel. Panels are **sorted by not-sent share**, highest first. Dashed lines in each panel are the **overall shares of all unemployed**: not sent **21.4%**, not participated **3.3%**, participated **75.3%**.
 
-The same structure was used for **county**, **sex**, and **age**. Two further figures keep county as the panel and put **sex** or **age** as bar clusters inside the panel, so the three statuses can be compared across demographics *within* counties.
+The same structure was used for **county**, **sex**, and **age**. Two further figures keep county as the panel and put **sex** or **age** as bar clusters inside the panel. A separate script draws **age × sex**: age-group panels (same sort) with men and women as clusters inside each panel.
 
-Code: `src/analysis/training_status_charts.py`. Notes: [output/txt/training_status_facets.txt](output/txt/training_status_facets.txt). Cross-tab CSVs: [training_status_by_county_sex.csv](output/txt/training_status_by_county_sex.csv), [training_status_by_county_age.csv](output/txt/training_status_by_county_age.csv).
+Code: `src/analysis/training_status_charts.py`, `src/analysis/training_status_age_sex.py`. Notes: [output/txt/training_status_facets.txt](output/txt/training_status_facets.txt). Cross-tab CSVs: [training_status_by_county_sex.csv](output/txt/training_status_by_county_sex.csv), [training_status_by_county_age.csv](output/txt/training_status_by_county_age.csv), [training_status_by_age_sex.csv](output/txt/training_status_by_age_sex.csv).
 
 ### County
 
 ![Training status by county](output/png/analysis/training_status_facet_county.png)
 
-County order (not participated, high to low): Pärnumaa and Tartumaa **5.5%**, then Ida-Virumaa 4.4%, down to Saaremaa **0.8%**. The brown bar stays small everywhere; the eye is pulled by the **not-sent** bar instead. **Hiiumaa** sits well above the 21.4% not-sent line (37.9%) and well below the 75.3% participated line (60.6%). **Valgamaa** is the opposite (10.3% not sent, 86.5% participated) even though it is mid-pack on non-participation (3.2%). Large counties (Tallinn ja Harjumaa, Ida-Virumaa) hug the overall lines.
+County order (not sent, high to low): **Hiiumaa 37.9%**, Ida-Virumaa 25.1%, Pärnumaa 23.7%, … down to **Valgamaa 10.3%**. Sorting on access puts the outlier first: Hiiumaa is well above the 21.4% not-sent line and well below the 75.3% participated line (60.6%). Valgamaa is the opposite (86.5% participated). Large counties sit near the overall lines (Tallinn ja Harjumaa 22.4% not sent). The brown not-participated bar stays small in every panel; Tartumaa and Pärnumaa still show the highest non-starts (5.5%) but they are no longer at the front.
 
 ### Sex
 
 ![Training status by sex](output/png/analysis/training_status_facet_sex.png)
 
-**Not sent** is on the overall line for both sexes (21.2% men, 21.5% women). **Not participated** is the split: men **4.2%** (above the 3.3% line), women **2.3%** (below it). Participated is the mirror of that (74.5% vs 76.2%).
+**Not sent** is on the overall line for both sexes (women **21.5%**, men **21.2%**), so sorting by not sent barely changes the order. **Not participated** is the split: men **4.2%** (above the 3.3% line), women **2.3%** (below it). Participated is the mirror of that (74.5% vs 76.2%).
 
 ### Age group
 
 ![Training status by age group](output/png/analysis/training_status_facet_age.png)
 
-Sorted by non-participation, **25–34** is first (4.3%) and **45–54** last (2.7%). The panel that stands off the reference lines is **55+**: not sent **25.9%**, participated **70.5%**. Other ages sit on the overall mix.
+Sorted by not sent, **55+** is first (**25.9%** not sent, **70.5%** participated). Other ages sit on the overall mix (not sent 20–22%). Non-participation is not what moves age; access is.
+
+### Age group and sex
+
+![Training status by age group and sex](output/png/analysis/training_status_facet_age_sex.png)
+
+Table: [training_status_by_age_sex.txt](output/txt/training_status_by_age_sex.txt). Age panels keep the not-sent sort; inside each panel the clusters are **mees** and **naine**.
+
+The only cell that clearly leaves the overall lines is **women 55+**: **31.2%** not sent (65 of 208) and **64.9%** participated. Men 55+ are on the national mix (21.1% not sent, 75.4% participated). Below 55, men and women have similar not-sent shares; men still have a slightly higher non-start rate (for example 25–34 men 5.2% vs women 3.3%). This is the same interaction as section 12, now in the three-status colours.
 
 ### Demographics within counties
 
 ![Training status by county and sex](output/png/analysis/training_status_facet_county_sex.png)
 
-The male non-start gap is not only a national average. **Pärnumaa men** are **8.3%** not participated (19 of 229) vs **2.1%** of Pärnumaa women (4 of 188). Tartumaa men 6.2%, Ida-Virumaa men 5.2%. Hiiumaa’s high not-sent share is both sexes (36% men, 39% women).
+Counties follow the same not-sent order as the county figure. **Pärnumaa men** are **8.3%** not participated (19 of 229) vs **2.1%** of Pärnumaa women (4 of 188). Tartumaa men 6.2%, Ida-Virumaa men 5.2%. Hiiumaa’s high not-sent share is both sexes (36% men, 39% women).
 
 Age within county: [training_status_facet_county_age.png](output/png/analysis/training_status_facet_county_age.png). Small counties have thin age cells (Hiiumaa n=66), so those bars move a lot. In larger counties the 55+ not-sent lift is visible but not a different story from the national age figure.
 
-**Conclusion.** Side-by-side panels confirm section 15 by eye: **participation dominates every county**; **non-participation is a thin bar** that only Pärnumaa, Tartumaa, and some **men in those counties** push above the 3.3% line; **access (not sent)** is what really sorts places, with Hiiumaa high and Valgamaa low. Sex does not sort access; age 55+ does. Use the same colours and the same 0–100% scale when comparing any of these figures.
+**Conclusion.** Sorting panels by **not sent** makes access the first thing the eye sees: Hiiumaa high, Valgamaa low, **women 55+** the only age–sex cell well above the 21.4% line. Participation still dominates every panel. Non-participation stays a thin bar except among some men (Pärnumaa, Tartumaa). Sex does not sort access except at 55+. Use the same colours and the same 0–100% scale when comparing any of these figures.
 
 ---
 
@@ -659,7 +667,7 @@ These points follow from sections 1–16. They are patterns in this extract, not
 
 11. **Split the register into three statuses, not two** (section 15). Binary “sent vs not sent” hides that almost everyone who is sent also takes part. Non-participation is **165 people (3.3%)**, mostly `loobus`. County and age 55+ change **who is sent**; men have a higher non-start rate than women (4.2% vs 2.3%). Occupation and `Koolituskaart` do not change take-up among those already sent (~96%).
 
-12. **The faceted charts make the same split readable by eye** (section 16). Every county panel is dominated by participated; the brown not-participated bar stays small except Pärnumaa and Tartumaa (both 5.5%, and Pärnumaa *men* 8.3%). Hiiumaa is the access outlier (37.9% not sent). Men sit above the 3.3% non-start line, women below it; 55+ sits above the 21.4% not-sent line. Compare panels on the shared 0–100% scale and the dashed overall lines, not on raw counts.
+12. **The faceted charts make the same split readable by eye** (section 16). Panels are sorted by **not sent**, so Hiiumaa leads (37.9%) and Valgamaa is last (10.3%). Every panel is still dominated by participated. The brown not-participated bar stays small except Pärnumaa and Tartumaa (both 5.5%, and Pärnumaa *men* 8.3%). **Women 55+** are the age–sex outlier (**31.2%** not sent vs 21.1% for men 55+). Compare panels on the shared 0–100% scale and the dashed overall lines, not on raw counts.
 
 Full numbers: [output/txt/insights.txt](output/txt/insights.txt), [output/txt/duration_impact.txt](output/txt/duration_impact.txt), [output/txt/training_status_overall.txt](output/txt/training_status_overall.txt), [output/txt/training_status_facets.txt](output/txt/training_status_facets.txt). Figures: [output/png/analysis](output/png/analysis).
 

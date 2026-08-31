@@ -145,3 +145,11 @@ Create a separate script file to compute the distribution of unemployed individu
 ```text
 Create a faceted bar chart that shows, for each county, the percentage breakdown of unemployed people across the three training status categories (not sent to training, not participated, participants), so that county panels can be compared side by side. Each panel should represent one county, with bars inside the panel representing the three status categories, using consistent colors for the same category across all panels so patterns can be spotted by eye. Use the same y-axis scale across all panels so percentages are directly comparable between counties, and sort the panels by one of the categories, for example by the percentage of not participated, so that counties with the highest values appear first. Add a horizontal reference line in each panel showing the overall average percentage for that category across all counties, so it is easy to see which counties deviate from the average. Repeat the same faceted structure for sex and age group as additional breakdown dimensions, producing separate figures or an additional facet layer, so the same three status categories can be compared not only across counties but also across demographic subgroups within counties. Update also ANALYSIS.md, write that result under 16 and update Summary of actionable insights, which will be 17.
 ```
+
+---
+
+## 21. Facet charts sorted by not sent; age × sex
+
+```text
+ANALYSIS.md 16. Faceted comparison of the three training statuses - sort png graphs by 'not sent'. Create code file and output png for training status by age group and sex
+```

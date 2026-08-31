@@ -7,6 +7,7 @@ __all__ = [
     "run_duration_impact_analysis",
     "run_training_status_analysis",
     "run_training_status_charts",
+    "run_training_status_age_sex",
 ]
 
 
@@ -42,4 +43,8 @@ def __getattr__(name: str):
         from .training_status_charts import run_training_status_charts
 
         return run_training_status_charts
+    if name == "run_training_status_age_sex":
+        from .training_status_age_sex import run_training_status_age_sex
+
+        return run_training_status_age_sex
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

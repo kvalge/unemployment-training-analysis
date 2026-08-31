@@ -73,3 +73,12 @@ Completed tasks, newest last.
 19. **Faceted training-status charts**
     - Added `src/analysis/training_status_charts.py`: county, sex, and age small multiples, plus county×sex and county×age, shared 0–100% scale, colours, and overall reference lines. Sorted by not-participated share.
     - Wrote figures in `output/png/analysis`, notes and cross-tab CSVs in `output/txt`. Inserted `ANALYSIS.md` section 16; moved the summary to 17 and added insight 12.
+
+20. **Check of src analysis code**
+    - Recomputed status, sent, monthly, duration, and completion figures from the raw tables and compared them to the module outputs. No src files were changed.
+
+## 2026-08-31
+
+21. **Facet charts sorted by not sent; age × sex**
+    - Sorted all training-status facet PNGs by not-sent share. Added `src/analysis/training_status_age_sex.py` and `training_status_facet_age_sex.png`.
+    - Updated `ANALYSIS.md` section 16 and insight 12. Hooked the new step into `main.py`.
