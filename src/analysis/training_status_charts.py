@@ -106,6 +106,31 @@ def _hide_extra(axes, used: int) -> None:
         ax.set_visible(False)
 
 
+def _add_title_and_legend(fig, title: str, *, single_row: bool) -> None:
+    """Title, then legend, then a gap, then the panels — no overlap with labels."""
+    fig.suptitle(title, fontsize=12, y=0.98)
+    wide = fig.get_size_inches()[0] >= 12
+    if single_row:
+        ncol = 6 if wide else 3
+        top = 0.72 if wide else 0.62
+        fig.subplots_adjust(top=top, bottom=0.16, left=0.08, right=0.99, wspace=0.28)
+        legend_y = 0.90
+    else:
+        fig.subplots_adjust(top=0.90, bottom=0.10, left=0.07, right=0.99, hspace=0.42, wspace=0.22)
+        legend_y = 0.045
+        ncol = 3
+    fig.legend(
+        handles=_legend_handles(),
+        loc="upper center",
+        bbox_to_anchor=(0.5, legend_y),
+        ncol=ncol,
+        frameon=False,
+        fontsize=8,
+        columnspacing=1.4,
+        handletextpad=0.5,
+    )
+
+
 def plot_status_facets(
     wide: pd.DataFrame,
     overall_pct: dict[str, float],
@@ -149,18 +174,9 @@ def plot_status_facets(
         ax.set_title(f"{row.group}  (n={int(row.n):,})", fontsize=9)
 
     _hide_extra(axes_list, n_panels)
-    fig.suptitle(title, fontsize=12, y=1.02)
-    fig.legend(
-        handles=_legend_handles(),
-        loc="lower center",
-        ncol=3,
-        frameon=False,
-        bbox_to_anchor=(0.5, -0.02),
-        fontsize=8,
-    )
-    fig.tight_layout()
+    _add_title_and_legend(fig, title, single_row=nrows == 1)
     path = PNG_DIR / filename
-    fig.savefig(path, dpi=140, bbox_inches="tight")
+    fig.savefig(path, dpi=140)
     plt.close(fig)
     return path
 
@@ -194,34 +210,27 @@ def plot_cross_facets(
         ax = axes_list[i]
         sub = long_df.loc[long_df["group_a"].astype(str) == panel]
         n_panel = int(sub.groupby("group_b", observed=True)["n_group"].first().sum())
+        inner_labels = []
         for j, inner in enumerate(inner_order):
             cell = sub.loc[sub["group_b"].astype(str) == str(inner)]
             n_cell = int(cell["n_group"].iloc[0]) if not cell.empty else 0
+            inner_labels.append(
+                f"{inner}\n(n={n_cell:,})" if n_inner <= 3 else str(inner)
+            )
             for k, status in enumerate(STATUS_ORDER):
                 match = cell.loc[cell["status"] == status]
                 pct = 100 * float(match["pct_within_group"].iloc[0]) if not match.empty else 0.0
                 x = j + (k - (n_status - 1) / 2) * bar_w
                 ax.bar(x, pct, width=bar_w * 0.92, color=colors[k], zorder=2)
-            if n_inner <= 3:
-                ax.text(j, 96, f"n={n_cell:,}", ha="center", va="top", fontsize=6, color="#444444")
         _style_panel(ax, overall_pct)
         ax.set_xticks(range(n_inner))
-        ax.set_xticklabels([str(v) for v in inner_order], fontsize=7, rotation=25, ha="right")
+        ax.set_xticklabels(inner_labels, fontsize=7, rotation=0)
         ax.set_title(f"{panel}  (n={n_panel:,})", fontsize=8.5)
 
     _hide_extra(axes_list, n_panels)
-    fig.suptitle(title, fontsize=12, y=1.01)
-    fig.legend(
-        handles=_legend_handles(),
-        loc="lower center",
-        ncol=3,
-        frameon=False,
-        bbox_to_anchor=(0.5, -0.02),
-        fontsize=8,
-    )
-    fig.tight_layout()
+    _add_title_and_legend(fig, title, single_row=nrows == 1)
     path = PNG_DIR / filename
-    fig.savefig(path, dpi=140, bbox_inches="tight")
+    fig.savefig(path, dpi=140)
     plt.close(fig)
     return path
 
@@ -299,7 +308,7 @@ def run_training_status_charts(
             "Training status by sex  ·  panels sorted by not sent",
             "training_status_facet_sex.png",
             ncols=2,
-            figsize=(8.4, 4.6),
+            figsize=(9.2, 6.4),
         ),
         "age": plot_status_facets(
             by_age,
@@ -307,7 +316,7 @@ def run_training_status_charts(
             "Training status by age group  ·  panels sorted by not sent",
             "training_status_facet_age.png",
             ncols=5,
-            figsize=(13.8, 4.8),
+            figsize=(14.6, 6.5),
         ),
         "county_sex": plot_cross_facets(
             by_county_sex,

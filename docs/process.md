@@ -82,3 +82,6 @@ Completed tasks, newest last.
 21. **Facet charts sorted by not sent; age × sex**
     - Sorted all training-status facet PNGs by not-sent share. Added `src/analysis/training_status_age_sex.py` and `training_status_facet_age_sex.png`.
     - Updated `ANALYSIS.md` section 16 and insight 12. Hooked the new step into `main.py`.
+
+22. **Legend spacing on facet PNGs**
+    - Moved the legend above the panels and reserved a gap so legend text no longer overlaps axis labels on the sex, age, and age×sex figures.

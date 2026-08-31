@@ -87,7 +87,7 @@ def run_training_status_age_sex(
         "Training status by age group and sex  ·  age panels sorted by not sent",
         "training_status_facet_age_sex.png",
         ncols=5,
-        figsize=(14.2, 5.2),
+        figsize=(15.0, 6.8),
     )
     return {"csv": csv_path, "txt": txt_path, "png": png_path}
 
