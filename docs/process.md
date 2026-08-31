@@ -85,3 +85,6 @@ Completed tasks, newest last.
 
 22. **Legend spacing on facet PNGs**
     - Moved the legend above the panels and reserved a gap so legend text no longer overlaps axis labels on the sex, age, and age×sex figures.
+
+23. **Streamlit page for section 16**
+    - Added `streamlit_app.py` to show the three-status facet charts stacked, with a title and short description, at a centered width rather than full page. Recorded `streamlit` in `requirements.txt`.

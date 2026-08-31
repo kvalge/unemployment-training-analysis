@@ -153,3 +153,11 @@ Create a faceted bar chart that shows, for each county, the percentage breakdown
 ```text
 ANALYSIS.md 16. Faceted comparison of the three training statuses - sort png graphs by 'not sent'. Create code file and output png for training status by age group and sex
 ```
+
+---
+
+## 23. Streamlit page for section 16
+
+```text
+Create a new file streamlit_app.py at the project root. It should display ANALYSIS.md 16. Faceted comparison of the three training statuses graphs on web page. Add a title, short description. Put graphs under each other, not as wide as is a webpage as a whole.
+```

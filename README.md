@@ -34,6 +34,12 @@ python main.py
 
 That runs the full pipeline: ensure/download raw Excel files, load both tables, exploratory analysis, then all analysis scripts. Outputs go to `output/txt` and `output/png`.
 
+Section 16 charts on a web page:
+
+```text
+streamlit run streamlit_app.py
+```
+
 ## Project layout
 
 ```text
