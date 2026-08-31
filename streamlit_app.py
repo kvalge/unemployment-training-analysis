@@ -1,4 +1,7 @@
-"""Streamlit page for ANALYSIS.md section 16 facet charts."""
+"""
+Streamlit page for ANALYSIS.md section 16 facet charts.
+To run: streamlit run streamlit_app.py
+"""
 
 from pathlib import Path
 
@@ -91,7 +94,7 @@ for figure in FIGURES:
     path = PNG_DIR / figure["file"]
     st.subheader(figure["title"])
     if path.exists():
-        st.image(str(path), use_container_width=True)
+        st.image(str(path), width="stretch")
         st.caption(figure["caption"])
     else:
         st.warning(f"Figure not found: `{path.name}`. Run `python main.py` first.")

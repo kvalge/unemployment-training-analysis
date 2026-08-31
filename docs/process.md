@@ -88,3 +88,6 @@ Completed tasks, newest last.
 
 23. **Streamlit page for section 16**
     - Added `streamlit_app.py` to show the three-status facet charts stacked, with a title and short description, at a centered width rather than full page. Recorded `streamlit` in `requirements.txt`.
+
+24. **Streamlit image width API**
+    - Replaced deprecated `use_container_width` with `width="stretch"` in `streamlit_app.py`.
